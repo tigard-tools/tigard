@@ -1,0 +1,17 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP7365-18
+D Fixed 6V 1.8V 600mA SOT25 Low Dropout Regulators(LDO) RoHS
+$ENDCMP
+#
+$CMP AP7365-33
+D Fixed 6V 3.3V 600mA SOT25 Low Dropout Regulators(LDO) RoHS
+$ENDCMP
+#
+$CMP SW_DPDT
+D Switch, dual pole double throw
+K switch dual-pole double-throw spdt ON-ON
+F ~
+$ENDCMP
+#
+#End Doc Library

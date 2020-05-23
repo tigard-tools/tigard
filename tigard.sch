@@ -57,30 +57,10 @@ Wire Wire Line
 Connection ~ 1900 900 
 NoConn ~ 1900 2100
 NoConn ~ 1900 2200
-Text Label 2400 1700 2    50   ~ 0
+Text Label 2600 1700 2    50   ~ 0
 USB_DP
-Text Label 2400 1600 2    50   ~ 0
-USB_DM
-Wire Wire Line
-	1900 1500 1950 1500
-Wire Wire Line
-	1950 1500 1950 1600
-Wire Wire Line
-	1950 1600 1900 1600
-Wire Wire Line
-	1900 1700 1950 1700
-Wire Wire Line
-	1900 1800 1950 1800
-Wire Wire Line
-	1950 1800 1950 1700
-Wire Wire Line
-	1950 1700 2400 1700
-Connection ~ 1950 1700
-Wire Wire Line
-	2400 1600 1950 1600
-Connection ~ 1950 1600
-Text Notes 2000 2000 0    50   ~ 0
-Match length,\n90-ohm +/- 10%\ndifferential impedance
+Text Label 2600 1600 2    50   ~ 0
+USB_DN
 $Comp
 L Device:R_Small R1
 U 1 1 5EBD3955
@@ -93,19 +73,6 @@ F 4 "0402WGJ0512TCE" V 2050 1200 50  0001 C CNN "P/N"
 F 5 "C25941" V 2050 1200 50  0001 C CNN "LCSC"
 	1    2050 1200
 	0    1    1    0   
-$EndComp
-$Comp
-L Device:R_Small R2
-U 1 1 5EBD4231
-P 2050 1300
-F 0 "R2" V 2250 1300 50  0000 C CNN
-F 1 "5.1k" V 2150 1300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 2050 1300 50  0001 C CNN
-F 3 "~" H 2050 1300 50  0001 C CNN
-F 4 "0402WGJ0512TCE" V 2050 1300 50  0001 C CNN "P/N"
-F 5 "C25941" V 2050 1300 50  0001 C CNN "LCSC"
-	1    2050 1300
-	0    -1   1    0   
 $EndComp
 $Comp
 L power:GND #PWR0102
@@ -908,7 +875,7 @@ Wire Wire Line
 Wire Wire Line
 	1150 4750 1500 4750
 Text Label 1150 5550 0    50   ~ 0
-USB_DM
+USB_DN
 Text Label 1150 5650 0    50   ~ 0
 USB_DP
 $Comp
@@ -2784,21 +2751,21 @@ Jumper can be cut to isolate\ntarget from reference voltage.\nFor example if the
 Text Notes 6900 3700 0    50   ~ 0
 SPDT can be used
 $Comp
-L Graphic:Logo_Open_Hardware_Small #LOGO1
+L Graphic:Logo_Open_Hardware_Small LOGO1
 U 1 1 5F27AC51
 P 5250 9500
-F 0 "#LOGO1" H 5250 9775 50  0001 C CNN
+F 0 "LOGO1" H 5250 9775 50  0001 C CNN
 F 1 "Logo_Open_Hardware_Small" H 5250 9275 50  0001 C CNN
-F 2 "Symbol:OSHW-Symbol_6.7x6mm_SilkScreen" H 5250 9500 50  0001 C CNN
+F 2 "Symbol:OSHW-Symbol_22.3x20mm_SilkScreen" H 5250 9500 50  0001 C CNN
 F 3 "~" H 5250 9500 50  0001 C CNN
 	1    5250 9500
 	1    0    0    -1  
 $EndComp
 $Comp
-L tigard:Logo_SH #LOGO2
+L tigard:Logo_SH LOGO2
 U 1 1 5F3191B2
 P 5900 9500
-F 0 "#LOGO2" H 5900 9250 50  0001 C CNN
+F 0 "LOGO2" H 5900 9250 50  0001 C CNN
 F 1 "Logo_SH" H 5900 9750 50  0001 C CNN
 F 2 "tigard:sh_logo" H 5900 9500 50  0001 C CNN
 F 3 "" H 5900 9500 50  0001 C CNN
@@ -2859,4 +2826,37 @@ F 5 "C358689" H 9200 1200 50  0001 C CNN "LCSC"
 	1    9200 1200
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R_Small R2
+U 1 1 5EBD4231
+P 2050 1300
+F 0 "R2" V 2250 1300 50  0000 C CNN
+F 1 "5.1k" V 2150 1300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2050 1300 50  0001 C CNN
+F 3 "~" H 2050 1300 50  0001 C CNN
+F 4 "0402WGJ0512TCE" V 2050 1300 50  0001 C CNN "P/N"
+F 5 "C25941" V 2050 1300 50  0001 C CNN "LCSC"
+	1    2050 1300
+	0    -1   1    0   
+$EndComp
+Text Notes 2000 2000 0    50   ~ 0
+Match length,\n90-ohm +/- 10%\ndifferential impedance
+Wire Wire Line
+	1900 1500 1950 1500
+Wire Wire Line
+	1950 1500 1950 1600
+Wire Wire Line
+	1950 1600 1900 1600
+Wire Wire Line
+	2600 1600 1950 1600
+Connection ~ 1950 1600
+Wire Wire Line
+	2600 1700 1950 1700
+Wire Wire Line
+	1950 1700 1950 1800
+Wire Wire Line
+	1950 1800 1900 1800
+Wire Wire Line
+	1900 1700 1950 1700
+Connection ~ 1950 1700
 $EndSCHEMATC

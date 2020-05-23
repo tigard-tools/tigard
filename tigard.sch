@@ -8,8 +8,8 @@ Title "Tigard"
 Date ""
 Rev "v0.1.0"
 Comp ""
-Comment1 ""
-Comment2 ""
+Comment1 "Copyright 2020 Franklin Harding"
+Comment2 "Licensed under CC-BY-SA 4.0"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -524,19 +524,6 @@ F 5 "C358693" H 8850 2300 50  0001 C CNN "LCSC"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x10_Odd_Even J2
-U 1 1 5EBE24BB
-P 8850 1250
-F 0 "J2" H 8900 1867 50  0000 C CNN
-F 1 "JTAG" H 8900 1776 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 8850 1250 50  0001 C CNN
-F 3 "~" H 8850 1250 50  0001 C CNN
-F 4 "MTP125-1210S1" H 8850 1250 50  0001 C CNN "P/N"
-F 5 "C358699" H 8850 1250 50  0001 C CNN "LCSC"
-	1    8850 1250
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_02x05_Odd_Even J5
 U 1 1 5EBE7F5A
 P 10350 2400
@@ -723,96 +710,6 @@ Wire Wire Line
 Connection ~ 10000 2600
 Wire Wire Line
 	10000 2600 10000 2650
-Text Label 8300 850  0    50   ~ 0
-VTARGET
-Text Label 8300 950  0    50   ~ 0
-~TRST
-Text Label 8300 1050 0    50   ~ 0
-TDI
-Text Label 8300 1150 0    50   ~ 0
-TMS
-Text Label 8300 1250 0    50   ~ 0
-TCK
-Text Label 8300 1450 0    50   ~ 0
-TDO
-NoConn ~ 8650 1350
-NoConn ~ 8650 1650
-NoConn ~ 8650 1750
-Text Label 8300 1550 0    50   ~ 0
-~SRST
-Text Label 9500 850  2    50   ~ 0
-VTARGET
-Wire Wire Line
-	9500 850  9150 850 
-Wire Wire Line
-	8300 850  8650 850 
-Wire Wire Line
-	8300 950  8650 950 
-Wire Wire Line
-	8650 1050 8300 1050
-Wire Wire Line
-	8300 1150 8650 1150
-Wire Wire Line
-	8650 1250 8300 1250
-Wire Wire Line
-	8300 1450 8650 1450
-Wire Wire Line
-	8650 1550 8300 1550
-$Comp
-L power:GND #PWR0121
-U 1 1 5ECA6397
-P 9300 1800
-F 0 "#PWR0121" H 9300 1550 50  0001 C CNN
-F 1 "GND" H 9305 1627 50  0000 C CNN
-F 2 "" H 9300 1800 50  0001 C CNN
-F 3 "" H 9300 1800 50  0001 C CNN
-	1    9300 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9300 1800 9300 1750
-Wire Wire Line
-	9300 950  9150 950 
-Wire Wire Line
-	9150 1050 9300 1050
-Connection ~ 9300 1050
-Wire Wire Line
-	9300 1050 9300 950 
-Wire Wire Line
-	9150 1150 9300 1150
-Connection ~ 9300 1150
-Wire Wire Line
-	9300 1150 9300 1050
-Wire Wire Line
-	9150 1250 9300 1250
-Connection ~ 9300 1250
-Wire Wire Line
-	9300 1250 9300 1150
-Wire Wire Line
-	9150 1350 9300 1350
-Connection ~ 9300 1350
-Wire Wire Line
-	9300 1350 9300 1250
-Wire Wire Line
-	9150 1450 9300 1450
-Connection ~ 9300 1450
-Wire Wire Line
-	9300 1450 9300 1350
-Wire Wire Line
-	9150 1550 9300 1550
-Connection ~ 9300 1550
-Wire Wire Line
-	9300 1550 9300 1450
-Wire Wire Line
-	9150 1650 9300 1650
-Connection ~ 9300 1650
-Wire Wire Line
-	9300 1650 9300 1550
-Wire Wire Line
-	9150 1750 9300 1750
-Connection ~ 9300 1750
-Wire Wire Line
-	9300 1750 9300 1650
 $Comp
 L Connector_Generic:Conn_01x09 J3
 U 1 1 5EBEAC72
@@ -821,8 +718,8 @@ F 0 "J3" H 10780 1292 50  0000 L CNN
 F 1 "UART" H 10780 1201 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 10700 1250 50  0001 C CNN
 F 3 "~" H 10700 1250 50  0001 C CNN
-F 4 "A2541WV-9P" H 10700 1250 50  0001 C CNN "P/N"
-F 5 "C225484" H 10700 1250 50  0001 C CNN "LCSC"
+F 4 "MTP125-1108S1" H 10700 1250 50  0001 C CNN "P/N"
+F 5 "C358689" H 10700 1250 50  0001 C CNN "LCSC"
 	1    10700 1250
 	1    0    0    -1  
 $EndComp
@@ -830,17 +727,17 @@ Text Label 10100 950  0    50   ~ 0
 UART_TX
 Text Label 10100 1050 0    50   ~ 0
 UART_RX
-Text Label 10100 1150 0    50   ~ 0
-~UART_RTS
 Text Label 10100 1250 0    50   ~ 0
-~UART_CTS
+~UART_RTS
 Text Label 10100 1350 0    50   ~ 0
-~UART_DTR
+~UART_CTS
 Text Label 10100 1450 0    50   ~ 0
-~UART_DSR
+~UART_DTR
 Text Label 10100 1550 0    50   ~ 0
-~UART_DCD
+~UART_DSR
 Text Label 10100 1650 0    50   ~ 0
+~UART_DCD
+Text Label 10100 1150 0    50   ~ 0
 VTARGET
 $Comp
 L power:GND #PWR0122
@@ -860,17 +757,17 @@ Wire Wire Line
 Wire Wire Line
 	10100 1050 10500 1050
 Wire Wire Line
-	10100 1150 10500 1150
+	10100 1250 10500 1250
 Wire Wire Line
-	10500 1250 10100 1250
-Wire Wire Line
-	10100 1350 10500 1350
+	10500 1350 10100 1350
 Wire Wire Line
 	10100 1450 10500 1450
 Wire Wire Line
-	10500 1550 10100 1550
+	10100 1550 10500 1550
 Wire Wire Line
-	10100 1650 10500 1650
+	10500 1650 10100 1650
+Wire Wire Line
+	10100 1150 10500 1150
 Wire Wire Line
 	4600 2100 4200 2100
 Text Notes 10100 4000 0    100  Italic 20
@@ -2819,10 +2716,10 @@ Wire Wire Line
 	6500 6350 6400 6350
 Connection ~ 6400 6350
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0115
 U 1 1 5F64E0B7
 P 6650 8250
-F 0 "#PWR?" H 6650 8000 50  0001 C CNN
+F 0 "#PWR0115" H 6650 8000 50  0001 C CNN
 F 1 "GND" H 6655 8077 50  0000 C CNN
 F 2 "" H 6650 8250 50  0001 C CNN
 F 3 "" H 6650 8250 50  0001 C CNN
@@ -2898,14 +2795,68 @@ F 3 "~" H 5250 9500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L tigard:Logo_SH #LOGO??
+L tigard:Logo_SH #LOGO2
 U 1 1 5F3191B2
 P 5900 9500
-F 0 "#LOGO??" H 5900 9250 50  0001 C CNN
+F 0 "#LOGO2" H 5900 9250 50  0001 C CNN
 F 1 "Logo_SH" H 5900 9750 50  0001 C CNN
 F 2 "tigard:sh_logo" H 5900 9500 50  0001 C CNN
 F 3 "" H 5900 9500 50  0001 C CNN
 	1    5900 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5F53C62A
+P 8450 900
+F 0 "#PWR0121" H 8450 650 50  0001 C CNN
+F 1 "GND" H 8455 727 50  0000 C CNN
+F 2 "" H 8450 900 50  0001 C CNN
+F 3 "" H 8450 900 50  0001 C CNN
+	1    8450 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 900  9000 900 
+Wire Wire Line
+	9000 1600 8650 1600
+Wire Wire Line
+	8650 1500 9000 1500
+Wire Wire Line
+	9000 1400 8650 1400
+Wire Wire Line
+	8650 1300 9000 1300
+Wire Wire Line
+	9000 1200 8650 1200
+Wire Wire Line
+	8650 1100 9000 1100
+Text Label 8650 1600 0    50   ~ 0
+~SRST
+Text Label 8650 1500 0    50   ~ 0
+TDO
+Text Label 8650 1400 0    50   ~ 0
+TCK
+Text Label 8650 1300 0    50   ~ 0
+TMS
+Text Label 8650 1200 0    50   ~ 0
+TDI
+Text Label 8650 1100 0    50   ~ 0
+~TRST
+Wire Wire Line
+	8650 1000 9000 1000
+Text Label 8650 1000 0    50   ~ 0
+VTARGET
+$Comp
+L Connector_Generic:Conn_01x08 J2
+U 1 1 5F7118A4
+P 9200 1200
+F 0 "J2" H 9280 1192 50  0000 L CNN
+F 1 "JTAG" H 9280 1101 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 9200 1200 50  0001 C CNN
+F 3 "~" H 9200 1200 50  0001 C CNN
+F 4 "MTP125-1108S1" H 9200 1200 50  0001 C CNN "P/N"
+F 5 "C358689" H 9200 1200 50  0001 C CNN "LCSC"
+	1    9200 1200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

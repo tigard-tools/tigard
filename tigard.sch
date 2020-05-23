@@ -2886,4 +2886,26 @@ Text Notes 5000 2550 0    50   ~ 0
 Jumper can be cut to isolate\ntarget from reference voltage.\nFor example if the target is self\npowered but you want to use the\non-board LDOs as the reference\nvoltage.
 Text Notes 6900 3700 0    50   ~ 0
 SPDT can be used
+$Comp
+L Graphic:Logo_Open_Hardware_Small #LOGO1
+U 1 1 5F27AC51
+P 5250 9500
+F 0 "#LOGO1" H 5250 9775 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 5250 9275 50  0001 C CNN
+F 2 "Symbol:OSHW-Symbol_6.7x6mm_SilkScreen" H 5250 9500 50  0001 C CNN
+F 3 "~" H 5250 9500 50  0001 C CNN
+	1    5250 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tigard:Logo_SH #LOGO??
+U 1 1 5F3191B2
+P 5900 9500
+F 0 "#LOGO??" H 5900 9250 50  0001 C CNN
+F 1 "Logo_SH" H 5900 9750 50  0001 C CNN
+F 2 "tigard:sh_logo" H 5900 9500 50  0001 C CNN
+F 3 "" H 5900 9500 50  0001 C CNN
+	1    5900 9500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

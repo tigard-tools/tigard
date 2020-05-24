@@ -58,9 +58,9 @@ Wire Wire Line
 Connection ~ 1900 900 
 NoConn ~ 1900 2100
 NoConn ~ 1900 2200
-Text Label 2600 1700 2    50   ~ 0
+Text Label 2250 1800 2    50   ~ 0
 USB_DP
-Text Label 2600 1600 2    50   ~ 0
+Text Label 2250 1600 2    50   ~ 0
 USB_DN
 $Comp
 L Device:R_Small R1
@@ -913,8 +913,8 @@ $Comp
 L Device:Crystal_GND24 Y1
 U 1 1 5EE8326F
 P 1100 7850
-F 0 "Y1" V 1054 7607 50  0000 R CNN
-F 1 "12MHz" V 1145 7607 50  0000 R CNN
+F 0 "Y1" V 1050 7550 50  0000 L CNN
+F 1 "12MHz" V 1150 7450 50  0000 L CNN
 F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 1100 7850 50  0001 C CNN
 F 3 "~" H 1100 7850 50  0001 C CNN
 F 4 "X322512MSB4SI" V 1100 7850 50  0001 C CNN "P/N"
@@ -956,14 +956,7 @@ F 3 "" H 1400 8300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	900  7850 900  8250
-Wire Wire Line
-	900  8250 1400 8250
-Wire Wire Line
 	1400 8300 1400 8250
-Connection ~ 1400 8250
-Wire Wire Line
-	1400 8250 1500 8250
 $Comp
 L power:GND #PWR0129
 U 1 1 5EEB5793
@@ -2916,4 +2909,81 @@ F 6 "cap-cer-0402-100n" H 1700 10050 50  0001 C CNN "Key"
 	1    1700 10050
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:C_Small C23
+U 1 1 5EE9988B
+P 850 7650
+F 0 "C23" V 621 7650 50  0000 C CNN
+F 1 "30pF" V 712 7650 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 850 7650 50  0001 C CNN
+F 3 "~" H 850 7650 50  0001 C CNN
+F 4 "CL05C300JB5NNNC" V 850 7650 50  0001 C CNN "P/N"
+F 5 "C159804" V 850 7650 50  0001 C CNN "LCSC"
+F 6 "cap-cer-0402-22pF" V 850 7650 50  0001 C CNN "Key"
+	1    850  7650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1400 8250 1500 8250
+Wire Wire Line
+	950  7650 1100 7650
+Connection ~ 1100 7650
+Wire Wire Line
+	950  8050 1100 8050
+Connection ~ 1100 8050
+$Comp
+L power:GND #PWR01
+U 1 1 5F06B15D
+P 650 8050
+F 0 "#PWR01" H 650 7800 50  0001 C CNN
+F 1 "GND" H 655 7877 50  0000 C CNN
+F 2 "" H 650 8050 50  0001 C CNN
+F 3 "" H 650 8050 50  0001 C CNN
+	1    650  8050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	650  8050 750  8050
+Wire Wire Line
+	900  7850 650  7850
+Wire Wire Line
+	650  7850 650  8050
+Connection ~ 650  8050
+Wire Wire Line
+	750  7650 650  7650
+Wire Wire Line
+	650  7650 650  7850
+Connection ~ 650  7850
+$Comp
+L Device:C_Small C24
+U 1 1 5F135A55
+P 850 8050
+F 0 "C24" V 987 8050 50  0000 C CNN
+F 1 "30pF" V 1078 8050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 850 8050 50  0001 C CNN
+F 3 "~" H 850 8050 50  0001 C CNN
+F 4 "CL05C300JB5NNNC" V 850 8050 50  0001 C CNN "P/N"
+F 5 "C159804" V 850 8050 50  0001 C CNN "LCSC"
+F 6 "cap-cer-0402-22pF" V 850 8050 50  0001 C CNN "Key"
+	1    850  8050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 1800 1950 1800
+Wire Wire Line
+	2250 1600 1950 1600
+Wire Wire Line
+	1900 1700 1950 1700
+Wire Wire Line
+	1950 1700 1950 1800
+Connection ~ 1950 1800
+Wire Wire Line
+	1950 1800 2250 1800
+Wire Wire Line
+	1900 1500 1950 1500
+Wire Wire Line
+	1950 1500 1950 1600
+Connection ~ 1950 1600
+Wire Wire Line
+	1950 1600 1900 1600
 $EndSCHEMATC

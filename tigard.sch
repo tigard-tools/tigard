@@ -2986,4 +2986,15 @@ F 6 "res-0402cv-array-4-100k" V 5250 6050 50  0001 C CNN "Key"
 	1    5250 6050
 	0    1    1    0   
 $EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO3
+U 1 1 5ED57CD6
+P 5250 10000
+F 0 "LOGO3" H 5250 10275 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 5250 9775 50  0001 C CNN
+F 2 "Symbol:OSHW-Symbol_6.7x6mm_SilkScreen" H 5250 10000 50  0001 C CNN
+F 3 "~" H 5250 10000 50  0001 C CNN
+	1    5250 10000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

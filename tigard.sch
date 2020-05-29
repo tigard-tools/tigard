@@ -1607,20 +1607,6 @@ F 6 "cap-cer-0402-100n" H 3400 3300 50  0001 C CNN "Key"
 $EndComp
 Wire Notes Line
 	4800 3050 4800 11150
-$Comp
-L tigard:SN74LVC8T245 U5
-U 1 1 5FA83347
-P 6350 5750
-F 0 "U5" H 6350 6625 50  0000 C CNN
-F 1 "SN74LVC8T245" H 6350 6534 50  0000 C CNN
-F 2 "tigard:Texas_VQFN-RHL-24_ThermalVias" H 6350 5850 50  0001 C CNN
-F 3 "" H 6350 5850 50  0001 C CNN
-F 4 "SN74LVC8T245RHLR" H 6350 5750 50  0001 C CNN "P/N"
-F 5 "C350563" H 6350 5750 50  0001 C CNN "LCSC"
-F 6 "ic-sn74lvc8t245" H 6350 5750 50  0001 C CNN "Key"
-	1    6350 5750
-	1    0    0    -1  
-$EndComp
 Text Label 7200 5300 2    50   ~ 0
 ~ENABLE
 Text Label 7200 5100 2    50   ~ 0
@@ -1702,14 +1688,6 @@ Wire Wire Line
 	5450 5650 5900 5650
 Wire Wire Line
 	5450 5750 5900 5750
-Wire Wire Line
-	5450 5850 5900 5850
-Wire Wire Line
-	5450 5950 5900 5950
-Wire Wire Line
-	5450 6050 5900 6050
-Wire Wire Line
-	5450 6150 5900 6150
 $Comp
 L Device:R_Small R18
 U 1 1 5FB4F232
@@ -1730,54 +1708,6 @@ Wire Wire Line
 	5450 5100 5900 5100
 Wire Wire Line
 	5700 5200 5900 5200
-Text Label 5700 5450 0    50   ~ 0
-AD0
-Text Label 5700 5550 0    50   ~ 0
-AD2
-Text Label 5700 5650 0    50   ~ 0
-AD4
-Text Label 5700 5750 0    50   ~ 0
-BD0
-Text Label 5700 5850 0    50   ~ 0
-BD1
-Text Label 5700 5950 0    50   ~ 0
-BD3
-Text Label 5700 6050 0    50   ~ 0
-BD4
-Text Label 5700 6150 0    50   ~ 0
-BD5
-Text Label 8050 5450 2    50   ~ 0
-UART_TX
-Text Label 8050 5550 2    50   ~ 0
-~UART_RTS
-Text Label 8050 5650 2    50   ~ 0
-~UART_DTR
-Text Label 8050 5750 2    50   ~ 0
-CLK
-Text Label 8050 5850 2    50   ~ 0
-DO
-Text Label 8050 5950 2    50   ~ 0
-CS
-Text Label 8050 6050 2    50   ~ 0
-~SRST
-Text Label 8050 6150 2    50   ~ 0
-~TRST
-Wire Wire Line
-	8050 6150 7650 6150
-Wire Wire Line
-	7650 6050 8050 6050
-Wire Wire Line
-	8050 5950 7650 5950
-Wire Wire Line
-	7650 5850 8050 5850
-Wire Wire Line
-	8050 5750 7650 5750
-Wire Wire Line
-	7650 5650 8050 5650
-Wire Wire Line
-	8050 5550 7650 5550
-Wire Wire Line
-	7650 5450 8050 5450
 Wire Wire Line
 	7250 5450 6800 5450
 Wire Wire Line
@@ -1807,20 +1737,6 @@ F 3 "" H 6350 6400 50  0001 C CNN
 $EndComp
 Text Notes 6650 6350 0    50   ~ 0
 Output Buffer
-$Comp
-L tigard:SN74LVC8T245 U6
-U 1 1 601AD9F2
-P 6650 7600
-F 0 "U6" H 6650 8475 50  0000 C CNN
-F 1 "SN74LVC8T245" H 6650 8384 50  0000 C CNN
-F 2 "tigard:Texas_VQFN-RHL-24_ThermalVias" H 6650 7700 50  0001 C CNN
-F 3 "" H 6650 7700 50  0001 C CNN
-F 4 "SN74LVC8T245RHLR" H 6650 7600 50  0001 C CNN "P/N"
-F 5 "C350563" H 6650 7600 50  0001 C CNN "LCSC"
-F 6 "ic-sn74lvc8t245" H 6650 7600 50  0001 C CNN "Key"
-	1    6650 7600
-	1    0    0    -1  
-$EndComp
 Text Label 7500 7150 2    50   ~ 0
 ~ENABLE
 Text Label 7500 6950 2    50   ~ 0
@@ -1834,12 +1750,6 @@ Wire Wire Line
 Connection ~ 7150 6950
 Wire Wire Line
 	7100 7150 7500 7150
-Wire Wire Line
-	5350 8000 5300 8000
-Wire Wire Line
-	5300 7800 5350 7800
-Wire Wire Line
-	5300 7900 5350 7900
 $Comp
 L Device:R_Small R19
 U 1 1 601ADA37
@@ -1957,39 +1867,6 @@ Wire Wire Line
 	6200 7900 5750 7900
 Wire Wire Line
 	5750 8000 6200 8000
-Text Label 7500 7300 2    50   ~ 0
-UART_RX
-Text Label 7500 7400 2    50   ~ 0
-~UART_CTS
-Text Label 7500 7500 2    50   ~ 0
-~UART_DSR
-Text Label 7500 7600 2    50   ~ 0
-~UART_DCD
-Text Label 7500 7700 2    50   ~ 0
-DI
-NoConn ~ 5300 8000
-NoConn ~ 5300 7900
-NoConn ~ 5300 7800
-Text Label 5100 7300 0    50   ~ 0
-AD1
-Text Label 5100 7400 0    50   ~ 0
-AD3
-Text Label 5100 7500 0    50   ~ 0
-AD5
-Text Label 5100 7600 0    50   ~ 0
-AD6
-Text Label 5100 7700 0    50   ~ 0
-BD2
-Wire Wire Line
-	5100 7700 5350 7700
-Wire Wire Line
-	5100 7600 5350 7600
-Wire Wire Line
-	5100 7500 5350 7500
-Wire Wire Line
-	5100 7400 5350 7400
-Wire Wire Line
-	5100 7300 5350 7300
 Text Notes 7550 8650 0    100  Italic 20
 BUFFERS
 Wire Notes Line
@@ -2997,4 +2874,127 @@ F 3 "~" H 5250 10000 50  0001 C CNN
 	1    5250 10000
 	1    0    0    -1  
 $EndComp
+Text Label 7500 7700 2    50   ~ 0
+DI
+Text Label 7500 7600 2    50   ~ 0
+~UART_DCD
+Text Label 7500 7500 2    50   ~ 0
+~UART_DSR
+Text Label 7500 7400 2    50   ~ 0
+~UART_CTS
+Text Label 7500 7300 2    50   ~ 0
+UART_RX
+Wire Wire Line
+	5100 7300 5350 7300
+Wire Wire Line
+	5100 7400 5350 7400
+Wire Wire Line
+	5100 7500 5350 7500
+Wire Wire Line
+	5100 7600 5350 7600
+Wire Wire Line
+	5100 7700 5350 7700
+Text Label 5100 7700 0    50   ~ 0
+BD2
+Text Label 5100 7600 0    50   ~ 0
+AD6
+Text Label 5100 7500 0    50   ~ 0
+AD5
+Text Label 5100 7400 0    50   ~ 0
+AD3
+Text Label 5100 7300 0    50   ~ 0
+AD1
+NoConn ~ 5300 7800
+NoConn ~ 5300 7900
+NoConn ~ 5300 8000
+Wire Wire Line
+	5300 7900 5350 7900
+Wire Wire Line
+	5300 7800 5350 7800
+Wire Wire Line
+	5350 8000 5300 8000
+Text Label 5700 5750 0    50   ~ 0
+BD0
+Text Label 5700 5650 0    50   ~ 0
+AD4
+Text Label 5700 5550 0    50   ~ 0
+AD2
+Text Label 5700 5450 0    50   ~ 0
+AD0
+Wire Wire Line
+	7650 5450 8050 5450
+Wire Wire Line
+	8050 5550 7650 5550
+Wire Wire Line
+	7650 5650 8050 5650
+Wire Wire Line
+	8050 5750 7650 5750
+Text Label 8050 5750 2    50   ~ 0
+CLK
+Text Label 8050 5650 2    50   ~ 0
+~UART_DTR
+Text Label 8050 5550 2    50   ~ 0
+~UART_RTS
+Text Label 8050 5450 2    50   ~ 0
+UART_TX
+Text Label 8050 6150 2    50   ~ 0
+DO
+Text Label 8050 6050 2    50   ~ 0
+CS
+Text Label 8050 5950 2    50   ~ 0
+~SRST
+Text Label 8050 5850 2    50   ~ 0
+~TRST
+$Comp
+L tigard:SN74LVC8T245 U5
+U 1 1 5FA83347
+P 6350 5750
+F 0 "U5" H 6350 6625 50  0000 C CNN
+F 1 "SN74LVC8T245" H 6350 6534 50  0000 C CNN
+F 2 "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm" H 6350 5850 50  0001 C CNN
+F 3 "" H 6350 5850 50  0001 C CNN
+F 4 "SN74LVC8T245RHLR" H 6350 5750 50  0001 C CNN "P/N"
+F 5 "C350563" H 6350 5750 50  0001 C CNN "LCSC"
+F 6 "ic-sn74lvc8t245" H 6350 5750 50  0001 C CNN "Key"
+	1    6350 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tigard:SN74LVC8T245 U6
+U 1 1 601AD9F2
+P 6650 7600
+F 0 "U6" H 6650 8475 50  0000 C CNN
+F 1 "SN74LVC8T245" H 6650 8384 50  0000 C CNN
+F 2 "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm" H 6650 7700 50  0001 C CNN
+F 3 "" H 6650 7700 50  0001 C CNN
+F 4 "SN74LVC8T245RHLR" H 6650 7600 50  0001 C CNN "P/N"
+F 5 "C350563" H 6650 7600 50  0001 C CNN "LCSC"
+F 6 "ic-sn74lvc8t245" H 6650 7600 50  0001 C CNN "Key"
+	1    6650 7600
+	1    0    0    -1  
+$EndComp
+Text Label 5850 6150 2    50   ~ 0
+BD1
+Text Label 5850 6050 2    50   ~ 0
+BD3
+Text Label 5850 5950 2    50   ~ 0
+BD4
+Text Label 5850 5850 2    50   ~ 0
+BD5
+Wire Wire Line
+	5900 5850 5450 5850
+Wire Wire Line
+	5900 5950 5450 5950
+Wire Wire Line
+	5900 6050 5450 6050
+Wire Wire Line
+	5900 6150 5450 6150
+Wire Wire Line
+	8050 5850 7650 5850
+Wire Wire Line
+	7650 5950 8050 5950
+Wire Wire Line
+	8050 6050 7650 6050
+Wire Wire Line
+	7650 6150 8050 6150
 $EndSCHEMATC

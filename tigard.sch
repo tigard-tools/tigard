@@ -1662,17 +1662,6 @@ Wire Wire Line
 	7250 6050 6800 6050
 Wire Wire Line
 	6800 6150 7250 6150
-$Comp
-L power:GND #PWR0140
-U 1 1 600BAEA8
-P 6350 6400
-F 0 "#PWR0140" H 6350 6150 50  0001 C CNN
-F 1 "GND" H 6355 6227 50  0000 C CNN
-F 2 "" H 6350 6400 50  0001 C CNN
-F 3 "" H 6350 6400 50  0001 C CNN
-	1    6350 6400
-	1    0    0    -1  
-$EndComp
 Text Notes 6650 6350 0    50   ~ 0
 Output Buffer
 Text Label 7500 7150 2    50   ~ 0
@@ -2341,59 +2330,6 @@ F 6 "sw-toggle-dp4t" H 3950 2100 50  0001 C CNN "Key"
 	1    3950 2100
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	6200 6300 6200 6350
-Wire Wire Line
-	6200 6350 6300 6350
-Wire Wire Line
-	6350 6350 6350 6400
-Wire Wire Line
-	6300 6300 6300 6350
-Connection ~ 6300 6350
-Wire Wire Line
-	6300 6350 6350 6350
-Wire Wire Line
-	6400 6300 6400 6350
-Wire Wire Line
-	6400 6350 6350 6350
-Connection ~ 6350 6350
-Wire Wire Line
-	6500 6300 6500 6350
-Wire Wire Line
-	6500 6350 6400 6350
-Connection ~ 6400 6350
-$Comp
-L power:GND #PWR0115
-U 1 1 5F64E0B7
-P 6650 8250
-F 0 "#PWR0115" H 6650 8000 50  0001 C CNN
-F 1 "GND" H 6655 8077 50  0000 C CNN
-F 2 "" H 6650 8250 50  0001 C CNN
-F 3 "" H 6650 8250 50  0001 C CNN
-	1    6650 8250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6500 8150 6500 8200
-Wire Wire Line
-	6500 8200 6600 8200
-Wire Wire Line
-	6650 8200 6650 8250
-Wire Wire Line
-	6600 8150 6600 8200
-Connection ~ 6600 8200
-Wire Wire Line
-	6600 8200 6650 8200
-Wire Wire Line
-	6700 8150 6700 8200
-Wire Wire Line
-	6700 8200 6650 8200
-Connection ~ 6650 8200
-Wire Wire Line
-	6800 8150 6800 8200
-Wire Wire Line
-	6800 8200 6700 8200
-Connection ~ 6700 8200
 NoConn ~ 3700 2400
 NoConn ~ 3700 2500
 NoConn ~ 3700 2600
@@ -3102,4 +3038,52 @@ Wire Wire Line
 	2600 2400 2750 2400
 Wire Wire Line
 	2600 2650 2600 2700
+$Comp
+L power:GND #PWR?
+U 1 1 60537E1A
+P 6650 8250
+F 0 "#PWR?" H 6650 8000 50  0001 C CNN
+F 1 "GND" H 6655 8077 50  0000 C CNN
+F 2 "" H 6650 8250 50  0001 C CNN
+F 3 "" H 6650 8250 50  0001 C CNN
+	1    6650 8250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60538E37
+P 6350 6400
+F 0 "#PWR?" H 6350 6150 50  0001 C CNN
+F 1 "GND" H 6355 6227 50  0000 C CNN
+F 2 "" H 6350 6400 50  0001 C CNN
+F 3 "" H 6350 6400 50  0001 C CNN
+	1    6350 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 6300 6250 6350
+Wire Wire Line
+	6250 6350 6350 6350
+Wire Wire Line
+	6350 6300 6350 6350
+Connection ~ 6350 6350
+Wire Wire Line
+	6450 6300 6450 6350
+Wire Wire Line
+	6450 6350 6350 6350
+Wire Wire Line
+	6350 6400 6350 6350
+Wire Wire Line
+	6550 8150 6550 8200
+Wire Wire Line
+	6550 8200 6650 8200
+Wire Wire Line
+	6650 8200 6650 8250
+Wire Wire Line
+	6650 8150 6650 8200
+Connection ~ 6650 8200
+Wire Wire Line
+	6750 8150 6750 8200
+Wire Wire Line
+	6750 8200 6650 8200
 $EndSCHEMATC

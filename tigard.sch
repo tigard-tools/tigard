@@ -2847,7 +2847,7 @@ F 6 "ferrite-0402-30" V 2250 900 50  0001 C CNN "Key"
 $EndComp
 Text Notes 1800 3000 0    50   ~ 0
 https://www.ftdichip.com/Support/Documents/AppNotes/AN_146_USB_Hardware_Design_Guidelines_for_FTDI_ICs.pdf
-Text Notes 2050 2000 0    50   ~ 0
+Text Notes 2050 2100 0    50   ~ 0
 Route as 90-ohm differential\nimpedance matched length pair
 Text Label 2150 900  2    50   ~ 0
 VBUS
@@ -3054,12 +3054,12 @@ Wire Wire Line
 Wire Wire Line
 	2550 1200 2550 1300
 Wire Wire Line
-	2450 1600 1950 1600
-Connection ~ 1950 1600
-Wire Wire Line
-	1950 1800 2450 1800
-Connection ~ 1950 1800
-Wire Wire Line
 	2550 1350 2550 1300
 Connection ~ 2550 1300
+Wire Wire Line
+	1950 1600 2450 1600
+Connection ~ 1950 1600
+Wire Wire Line
+	2450 1800 1950 1800
+Connection ~ 1950 1800
 $EndSCHEMATC

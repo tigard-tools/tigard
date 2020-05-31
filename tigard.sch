@@ -2822,17 +2822,6 @@ Wire Wire Line
 	1300 2800 1300 2750
 Connection ~ 1300 2750
 $Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 5EBD0FDB
-P 2650 900
-F 0 "#FLG0101" H 2650 975 50  0001 C CNN
-F 1 "PWR_FLAG" V 2650 1028 50  0000 L CNN
-F 2 "" H 2650 900 50  0001 C CNN
-F 3 "~" H 2650 900 50  0001 C CNN
-	1    2650 900 
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:Ferrite_Bead_Small FB3
 U 1 1 5FA24965
 P 2250 900
@@ -3014,8 +3003,6 @@ F 6 "cap-cer-0402-100n" H 2550 1100 50  0001 C CNN "Key"
 	1    2550 1100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3750 2250 4200 2250
 Wire Notes Line
 	8800 3050 8800 550 
 Wire Notes Line
@@ -3031,22 +3018,7 @@ Wire Notes Line
 Wire Wire Line
 	4700 2100 4950 2100
 Wire Wire Line
-	2550 850  2550 900 
-$Comp
-L power:+5V #PWR02
-U 1 1 5FC89889
-P 2550 850
-F 0 "#PWR02" H 2550 700 50  0001 C CNN
-F 1 "+5V" H 2565 1023 50  0000 C CNN
-F 2 "" H 2550 850 50  0001 C CNN
-F 3 "" H 2550 850 50  0001 C CNN
-	1    2550 850 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	2350 900  2550 900 
-Wire Wire Line
-	2650 900  2550 900 
 Connection ~ 2550 900 
 Wire Wire Line
 	2250 1300 2550 1300
@@ -3060,6 +3032,34 @@ Connection ~ 2550 1300
 Wire Wire Line
 	1950 1600 2450 1600
 Connection ~ 1950 1600
+Wire Wire Line
+	3750 2250 4200 2250
+Wire Wire Line
+	2650 900  2550 900 
+Wire Wire Line
+	2550 850  2550 900 
+$Comp
+L power:+5V #PWR02
+U 1 1 5FC89889
+P 2550 850
+F 0 "#PWR02" H 2550 700 50  0001 C CNN
+F 1 "+5V" H 2565 1023 50  0000 C CNN
+F 2 "" H 2550 850 50  0001 C CNN
+F 3 "" H 2550 850 50  0001 C CNN
+	1    2550 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5EBD0FDB
+P 2650 900
+F 0 "#FLG0101" H 2650 975 50  0001 C CNN
+F 1 "PWR_FLAG" V 2650 1028 50  0000 L CNN
+F 2 "" H 2650 900 50  0001 C CNN
+F 3 "~" H 2650 900 50  0001 C CNN
+	1    2650 900 
+	0    1    1    0   
+$EndComp
 Wire Wire Line
 	2450 1800 1950 1800
 Connection ~ 1950 1800

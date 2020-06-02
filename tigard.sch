@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "Tigard"
 Date ""
-Rev "v0.1.0"
+Rev "v0.0"
 Comp ""
 Comment1 "Copyright 2020 Franklin Harding"
 Comment2 "Licensed under CC-BY-SA 4.0"

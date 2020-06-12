@@ -209,8 +209,8 @@ Pin Number | UART Signal | Color | FT2232H Pin
 ---------- | ----------- | ----- | -----------
 1 | VCC | Red | --
 2 | GDD | Black | --
-3 | TX | green/white | AD0
-4 | RX | green/white | AD1
+3 | TX | Green | AD0
+4 | RX | White | AD1
 5 | RTS | -- | AD2
 6 | CTS | -- | AD3
 7 | DTR | -- | AD4

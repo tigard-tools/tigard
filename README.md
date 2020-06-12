@@ -193,3 +193,102 @@ When all LEDS are on, then Tigard is probably working as intended. If you are st
 * It's a *protocol* issue. Observe your signals with a logic analyzer or oscilloscope to make sure they're correct
 * It's a *hardware* issue. Try a different Tigard board to see if it persists
 * It's a *tigard* issue. Try a different x232H board to see if it persists
+
+## Pinouts
+There are way too many choices of 'standard' pinouts for all of these interfaces. Pinouts were chosen for ease of use, specificially:
+* If there's a well established and used standard, use it (SWD)
+* If there's a predominant primary usage that would be easier, use it (SPI/I2C)
+* If there are other common boards with pinouts, use them (UART and JTAG)
+
+### UART
+This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards
+
+The coloring of the wiring harness is intended to match most common usb-serial cables
+
+Pin Number | UART Signal | Color | FT2232H Pin
+---------- | ----------- | ----- | -----------
+1 | VCC | Red | --
+2 | GDD | Black | --
+3 | TX | green/white | AD0
+4 | RX | green/white | AD1
+5 | RTS | -- | AD2
+6 | CTS | -- | AD3
+7 | DTR | -- | AD4
+8 | DSR | -- | AD5
+9 | DCD | -- | AD6
+
+### SWD
+This is a standard pinout. In order to accomodate both SWD and JTAG, the mode switch:
+1. Combines DI and DO to create SWDIO for SWD mode
+2. Selects between SWDIO and TMS for pin 2
+
+Pin Number | SWD Signal | FT2232H Pin | JTAG Signal | FT2232H Pin
+---------- | ---------- | ----------- | ----------- | -----------
+1 | VCC | -- | VCC | --
+2 | SWDIO | BD1 BD2 | TMS | BD3
+3 | GND | -- | GND | --
+4 | SWDCLK | BD0 | TCK | BD0 
+5 | GND | -- | GND | --
+6 | NC | -- | TDO | BD2 
+7 | KEY | -- | KEY | -- 
+8 | NC | -- | TDI | BD1
+9 | GND | -- | GND | --
+10 | nSRST | BD5 | nSRST | BD5
+
+### JTAG
+This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards
+
+The coloring of the wiring harness is what SecuringHardware.com used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
+
+This header can also be used for I2C and SPI if the 8-pin header doesn't make sense in your application
+
+Pin Number | JTAG Pin | Color | FT2232H Pin
+---------- | -------- | ----- | -----------
+1 | VCC | Red | --
+2 | GND | Black | -- 
+3 | TCK | White | BD0
+4 | TDI | Grey | BD1
+5 | TDO | Purple | BD2
+6 | TMS | Blue | BD3
+7 | TRST | Green | BD4
+8 | SRST | Yellow | BD5
+
+### SPI
+This header is designed specifically to match the pinout of most 8-pin SPI and I2C chips, so that a jumper to a chip clip or a socket would align properly.
+
+In order to accomodate both SPI and I2C, the mode switch:
+1. Combines DI and DO to create SDA for I2C mode
+2. Disconnects pin 2 in I2C mode for devices that use it as an address signal
+
+Chip Pin Number | Header Pin Number | SPI signal | FT2232H Pin
+--------------- | ----------------- | --------- | --------
+1 | 1 | CS | BD3
+2 | 3 | MISO | BD2
+3 | 5 | WP | pullup
+4 | 7 | GND | --
+5 | 8 | MOSI | BD1
+6 | 6 | SCK | BD0
+7 | 4 | EN | pullup
+8 | 2 | VCC | --
+
+### LA
+Often it is necessary to debug a protocol with a logic analyzer. This header is designed to connect directly to the Bitmagic logic analyzer, or you could use the Bitmagic logic analyzer wiring harness to connect to any other pinout.
+
+The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port, and 2 from the UART port.
+
+Pin Number | Bitmagic Signal | FT2232 Pin | SPI signal | JTAG signal | SWD Signal | I2C Signal | UART Signal
+---------- | --------------- | ---------- | ---------- | ----------- | ---------- | ---------- | -----------
+1 | xPB0 | BD0 | TCK | SCK | SWCLK | SCL
+2 | xPB1 | BD1 | TDI | MOSI | SWDIO | SDA
+3 | xPB2 | BD2 | TDO | MISO | SWDIO | SDA
+4 | xPB3 | BD3 | TMS | CS | |
+5 | xPB4 | BD4 | TRST | 
+6 | xPB5 | BD5 | SRST |
+7 | xPB6 | AD0 | | | | | TX
+8 | xPB7 | AD1 | | | | | RX
+9 | GND
+10 | GND
+11 | xTRIG
+12 | xCLK
+13 | xTRIG2
+14 | xIFCLK

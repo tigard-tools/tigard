@@ -207,7 +207,7 @@ The coloring of the wiring harness is intended to match most common usb-serial c
 
 Pin Number | UART Signal | Color | FT2232H Pin
 ---------- | ----------- | ----- | -----------
-1 | VCC | Red | --
+1 | VTGT | Red | --
 2 | GDD | Black | --
 3 | TX | Green | AD0
 4 | RX | White | AD1
@@ -224,7 +224,7 @@ This is a standard pinout. In order to accomodate both SWD and JTAG, the mode sw
 
 Pin Number | SWD Signal | FT2232H Pin | JTAG Signal | FT2232H Pin
 ---------- | ---------- | ----------- | ----------- | -----------
-1 | VCC | -- | VCC | --
+1 | VTGT | -- | VTGT | --
 2 | SWDIO | BD1 BD2 | TMS | BD3
 3 | GND | -- | GND | --
 4 | SWDCLK | BD0 | TCK | BD0 
@@ -244,7 +244,7 @@ This header can also be used for I2C and SPI if the 8-pin header doesn't make se
 
 Pin Number | JTAG Pin | Color | FT2232H Pin
 ---------- | -------- | ----- | -----------
-1 | VCC | Red | --
+1 | VTGT | Red | --
 2 | GND | Black | -- 
 3 | TCK | White | BD0
 4 | TDI | Grey | BD1
@@ -269,7 +269,7 @@ Chip Pin Number | Header Pin Number | SPI signal | FT2232H Pin
 5 | 8 | MOSI | BD1
 6 | 6 | SCK | BD0
 7 | 4 | EN | pullup
-8 | 2 | VCC | --
+8 | 2 | VTGT | --
 
 ### LA
 Often it is necessary to debug a protocol with a logic analyzer. This header is designed to connect directly to the Bitmagic logic analyzer, or you could use the Bitmagic logic analyzer wiring harness to connect to any other pinout.

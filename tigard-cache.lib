@@ -131,6 +131,66 @@ X Pin_9 9 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Connector_Generic_Conn_02x07_Odd_Even
+#
+DEF Connector_Generic_Conn_02x07_Odd_Even J 0 40 Y N 1 F N
+F0 "J" 50 400 50 H V C CNN
+F1 "Connector_Generic_Conn_02x07_Odd_Even" 50 -400 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -295 0 -305 1 1 6 N
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 305 0 295 1 1 6 N
+S -50 350 150 -350 1 1 10 f
+S 150 -295 100 -305 1 1 6 N
+S 150 -195 100 -205 1 1 6 N
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+S 150 105 100 95 1 1 6 N
+S 150 205 100 195 1 1 6 N
+S 150 305 100 295 1 1 6 N
+X Pin_1 1 -200 300 150 R 50 50 1 1 P
+X Pin_10 10 300 -100 150 L 50 50 1 1 P
+X Pin_11 11 -200 -200 150 R 50 50 1 1 P
+X Pin_12 12 300 -200 150 L 50 50 1 1 P
+X Pin_13 13 -200 -300 150 R 50 50 1 1 P
+X Pin_14 14 300 -300 150 L 50 50 1 1 P
+X Pin_2 2 300 300 150 L 50 50 1 1 P
+X Pin_3 3 -200 200 150 R 50 50 1 1 P
+X Pin_4 4 300 200 150 L 50 50 1 1 P
+X Pin_5 5 -200 100 150 R 50 50 1 1 P
+X Pin_6 6 300 100 150 L 50 50 1 1 P
+X Pin_7 7 -200 0 150 R 50 50 1 1 P
+X Pin_8 8 300 0 150 L 50 50 1 1 P
+X Pin_9 9 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_TestPoint
+#
+DEF Connector_TestPoint TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Connector_TestPoint" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ Pin*
+ Test*
+$ENDFPLIST
+DRAW
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_USB_C_Receptacle_USB2.0
 #
 DEF Connector_USB_C_Receptacle_USB2.0 J 0 40 Y Y 1 F N
@@ -234,28 +294,6 @@ X 4 4 0 -200 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device_D_Schottky_Small
-#
-DEF Device_D_Schottky_Small D 0 10 N N 1 F N
-F0 "D" -50 80 50 H V L CNN
-F1 "Device_D_Schottky_Small" -280 -80 50 H V L CNN
-F2 "" 0 0 50 V I C CNN
-F3 "" 0 0 50 V I C CNN
-$FPLIST
- TO-???*
- *_Diode_*
- *SingleDiode*
- D_*
-$ENDFPLIST
-DRAW
-P 2 0 1 0 -30 0 30 0 N
-P 4 0 1 10 30 -40 -30 0 30 40 30 -40 N
-P 6 0 1 10 -50 30 -50 40 -30 40 -30 -40 -10 -40 -10 -30 N
-X K 1 -100 0 70 R 50 50 1 1 P
-X A 2 100 0 70 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Device_Ferrite_Bead_Small
 #
 DEF Device_Ferrite_Bead_Small FB 0 0 N Y 1 F N
@@ -292,6 +330,27 @@ $FPLIST
 $ENDFPLIST
 DRAW
 A 0 -10 57 450 1350 0 1 0 N 40 30 -40 30
+C -40 0 20 0 1 0 N
+C 40 0 20 0 1 0 N
+X 1 1 -100 0 40 R 50 50 0 1 P
+X 2 2 100 0 40 L 50 50 0 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_Jumper_NO_Small
+#
+DEF Device_Jumper_NO_Small JP 0 30 N N 1 F N
+F0 "JP" 0 80 50 H V C CNN
+F1 "Device_Jumper_NO_Small" 10 -60 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SolderJumper*Open*
+ Jumper*
+ TestPoint*2Pads*
+ TestPoint*Bridge*
+$ENDFPLIST
+DRAW
 C -40 0 20 0 1 0 N
 C 40 0 20 0 1 0 N
 X 1 1 -100 0 40 R 50 50 0 1 P

@@ -1,3 +1,5 @@
+<img alt="Tigard PCB Render" width="320" align="right" src="https://raw.githubusercontent.com/tigard-tools/tigard/master/tigard-render.png">
+
 # Tigard
 
 USB to I2C, SPI, JTAG, UART, and SWD.

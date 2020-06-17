@@ -97,7 +97,7 @@ f.write(flash.read(0,len(flash)))
 f.close()
 ```
 
-## I2C
+## I2C (on SPI header)
 
 #### Hookup:
 
@@ -119,6 +119,12 @@ The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lin
 * The I2C switch ties the DI and DO lines together so that it can do bidirectional communication
 * The pullup resistors are not included since they are usually located on the target, and the weak pullups on the level shifters are sufficient
 
+#### Hacks:
+
+To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performace **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
+
+Many I2C targets already have pullup resistors. In addition, all of Tigard's I/O pins have a weak 100K ohm pullup. In testing, this has been sufficient for both in-circuit and external use of most I2C devices. If you need stronger pullups on I2C, you can temporarily add them by pulling up MOSI and SCK on the SPI header, or TCK and TDI on the JTAG header.
+
 #### Software:
 
 libmpsse is a powerful library for controlling the MPSSE, or high speed serial pins of the x232H series. However, it is no longer recommended because of a large number of dependencies
@@ -136,13 +142,15 @@ flash.write(5,10)
 flash.read(0,32)
 ```
 
-## JTAG
+## JTAG (on JTAG or CORTEX header)
 
 #### Hookup:
 
 The JTAG header is laid out with pins in the same order as the FTDI I/O pins are labeled, in order to be consistent with many other x232H breakout boards.
 
-Be sure to select JTAG on the mode selection switch, otherwise the standard hookup sequence applies.
+In additon, the CORTEX header is also wired as a standard ARM 10-pin JTAG header.
+
+Be sure to select JTAG on the mode selection switch. This makes sure that TDI and TDO are separated, and ensures that TMS is wired properly to the CORTEX header. Otherwise, the standard hookup sequence applies.
 
 #### Software:
 
@@ -167,13 +175,13 @@ To use it with openocd:
 openocd -f tigard-jtag.cfg
 ```
 
-## SWD
+## SWD (on CORTEX header)
 
 #### Hookup:
 
 The SWD header a standard 10-pin header found on many SWD target boards. A short 'SWD' cable with the same header on both ends is the ideal way to hook up to most targets.
 
-Be sure to select SWD on the mode selection switch, otherwise the standard hookup sequence applies.
+Be sure to select SWD on the mode selection switch. This connects the DI and DO pins with resistor R16 to make the bidirectional SWDIO pin, and connect it to pin 2 of the CORTEX header. Otherwise, the standard hookup sequence applies.
 
 #### Software:
 

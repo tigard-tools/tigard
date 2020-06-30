@@ -123,7 +123,7 @@ The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lin
 
 To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performace **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
 
-Many I2C targets already have pullup resistors. In addition, all of Tigard's I/O pins have a weak 100K ohm pullup. In testing, this has been sufficient for both in-circuit and external use of most I2C devices. If you need stronger pullups on I2C, you can temporarily add them by pulling up MOSI and SCK on the SPI header, or TCK and TDI on the JTAG header.
+Many I2C targets already have pullup resistors. In addition, all of Tigard's I/O pins have a weak 100K ohm pullup. In testing, this has been sufficient for both in-circuit and external use of most I2C devices. If you need stronger pullups on I2C, you can temporarily add them by pulling up COPI and SCK on the SPI header, or TCK and TDI on the JTAG header.
 
 #### Software:
 
@@ -316,10 +316,10 @@ In order to accomodate both SPI and I2C, the mode switch:
 | Chip Pin Number | Header Pin Number | SPI signal | FT2232H Pin |
 | --------------- | ----------------- | ---------- | ----------- |
 | 1               | 1                 | CS         | BD3         |
-| 2               | 3                 | MISO       | BD2         |
+| 2               | 3                 | CIPO       | BD2         |
 | 3               | 5                 | WP         | pullup      |
 | 4               | 7                 | GND        | --          |
-| 5               | 8                 | MOSI       | BD1         |
+| 5               | 8                 | COPI       | BD1         |
 | 6               | 6                 | SCK        | BD0         |
 | 7               | 4                 | EN         | pullup      |
 | 8               | 2                 | VTGT       | --          |
@@ -333,8 +333,8 @@ The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port,
 | Pin Number | Bitmagic Signal | FT2232 Pin | SPI signal | JTAG signal | SWD Signal | I2C Signal | UART Signal |
 | ---------- | --------------- | ---------- | ---------- | ----------- | ---------- | ---------- | ----------- |
 | 1          | xPB0            | BD0        | TCK        | SCK         | SWCLK      | SCL        |
-| 2          | xPB1            | BD1        | TDI        | MOSI        | SWDIO      | SDA        |
-| 3          | xPB2            | BD2        | TDO        | MISO        | SWDIO      | SDA        |
+| 2          | xPB1            | BD1        | TDI        | COPI        | SWDIO      | SDA        |
+| 3          | xPB2            | BD2        | TDO        | CIPO        | SWDIO      | SDA        |
 | 4          | xPB3            | BD3        | TMS        | CS          |            |
 | 5          | xPB4            | BD4        | TRST       |
 | 6          | xPB5            | BD5        | SRST       |

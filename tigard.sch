@@ -348,7 +348,7 @@ $EndComp
 Text Label 9250 2100 0    50   ~ 0
 CS
 Text Label 9250 2200 0    50   ~ 0
-MISO
+CIPO
 $Comp
 L power:GND #PWR0118
 U 1 1 5EBEFE84
@@ -379,7 +379,7 @@ VTARGET
 Text Label 10300 2300 2    50   ~ 0
 CLK
 Text Label 10300 2400 2    50   ~ 0
-MOSI
+COPI
 NoConn ~ 10950 2400
 Text Label 10600 2100 0    50   ~ 0
 VTARGET
@@ -2781,7 +2781,7 @@ DI
 Text Label 6500 3350 0    50   ~ 0
 TDO
 Text Label 6250 3350 0    50   ~ 0
-MISO
+CIPO
 Wire Wire Line
 	6250 3350 6700 3350
 Text Label 6250 3550 0    50   ~ 0
@@ -2813,7 +2813,7 @@ Wire Wire Line
 Text Label 5200 3750 0    50   ~ 0
 TDI
 Text Label 5550 3750 2    50   ~ 0
-MOSI
+COPI
 Text Label 5050 3750 0    50   ~ 0
 DO
 Wire Wire Line

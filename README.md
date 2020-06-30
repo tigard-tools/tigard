@@ -330,16 +330,16 @@ Often it is necessary to debug a protocol with a logic analyzer. This header is 
 
 The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port, and 2 from the UART port.
 
-| Pin Number | Bitmagic Signal | FT2232 Pin | SPI signal | JTAG signal | SWD Signal | I2C Signal | UART Signal |
-| ---------- | --------------- | ---------- | ---------- | ----------- | ---------- | ---------- | ----------- |
-| 1          | xPB0            | BD0        | TCK        | SCK         | SWCLK      | SCL        |
-| 2          | xPB1            | BD1        | TDI        | COPI        | SWDIO      | SDA        |
-| 3          | xPB2            | BD2        | TDO        | CIPO        | SWDIO      | SDA        |
-| 4          | xPB3            | BD3        | TMS        | CS          |            |
-| 5          | xPB4            | BD4        | TRST       |
-| 6          | xPB5            | BD5        | SRST       |
-| 7          | xPB6            | AD0        |            |             |            |            | TX          |
-| 8          | xPB7            | AD1        |            |             |            |            | RX          |
+| Pin Number | Bitmagic Signal | FT2232 Pin | JTAG signal | SPI signal | SWD Signal | I2C Signal | UART Signal |
+| ---------- | --------------- | ---------- | ----------- | ----------- | ---------- | ---------- | ----------- |
+| 1          | xPB0            | BD0        | TCK         | SCK         | SWCLK      | SCL        |
+| 2          | xPB1            | BD1        | TDI         | COPI        | SWDIO      | SDA        |
+| 3          | xPB2            | BD2        | TDO         | CIPO        | SWDIO      | SDA        |
+| 4          | xPB3            | BD3        | TMS         | CS          |            |
+| 5          | xPB4            | BD4        | TRST        |
+| 6          | xPB5            | BD5        | SRST        |
+| 7          | xPB6            | AD0        |             |             |            |            | TX          |
+| 8          | xPB7            | AD1        |             |             |            |            | RX          |
 | 9          | GND             |
 | 10         | GND             |
 | 11         | xTRIG           |

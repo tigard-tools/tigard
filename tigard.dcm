@@ -20,4 +20,14 @@ K switch dual-pole double-throw spdt ON-ON
 F ~
 $ENDCMP
 #
+$CMP VREF
+D Power symbol creates a global label with name "VREF"
+K power-flag
+$ENDCMP
+#
+$CMP VTARGET
+D Power symbol creates a global label with name "VTARGET"
+K power-flag
+$ENDCMP
+#
 #End Doc Library

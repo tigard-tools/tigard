@@ -97,24 +97,32 @@ f.write(flash.read(0,len(flash)))
 f.close()
 ```
 
-## I2C (on SPI header)
+## I2C (on I2C or SPI header)
 
 #### Hookup:
 
-The SPI/I2C header is laid out to be the same orientation as the pins on most 8-pin I2C chips, making it easy to attach clips or sockets.
+The I2C header (on hardware versions 1.0 and later) is compatible with [Sparkfun's Qwiic](https://www.sparkfun.com/qwiic) and [Adafruit's STEMMA QT](https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt) system:
 
-* Select I2C on the mode selection switch
+* Connect a 4-pin JST SH compatible cable into the I2C connector
+* Connect the other end to your STEMMA QT, Qwiic, or other I2C device
+
+In addition, the SPI header is laid out to be the same orientation as the pins on most 8-pin I2C chips, making it easy to attach clips or sockets:
+
 * Connect your clip or socket to the header. Pay attention to pin 1, which is usually marked on sockets or has a red/highlighted wire on ribbon cables
 * Connect your clip to the target or insert your chip into the socket
-* If you're doing this in-circuit, you *must* take extra precautions to make sure no other device is communicating with the SPI device.
-* If you're using a clip in-circuit and the target is powered on, choose the VTGT option on the voltage slider
-* If you're using a zif socket, or clip with a powered-off target, choose the voltage on the voltage slider. 
+
+In either case, you need to set the Tigard switches properly:
+
+* Select I2C on the mode selection switch
+* If you're attaching to a device in-circuit and the target has its own power, choose the VTGT option on the voltage slider
+* If you're attaching a standalone sensor, socket, or clip with a powered off target, choose the correct voltage on the voltage slider
 
 #### Quirks:
 
 The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lines using common emitter instead of push-pull-tristate I/O, but the FT2232H doesn't support common emitter. Therefore:
 
-* Only Main operation is supported, not Subordinate
+* Only controller operation is supported, not Device
+* Tigard may not play nice if there are other controllers present on the I2C interface
 * Clock stretching is not supported
 * The I2C switch ties the DI and DO lines together so that it can do bidirectional communication
 * The pullup resistors are not included since they are usually located on the target, and the weak pullups on the level shifters are sufficient
@@ -287,7 +295,9 @@ This is a standard pinout. In order to accomodate both SWD and JTAG, the mode sw
 
 ### JTAG
 
-This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards.
+This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards. 
+
+In general, set the mode switch to SPI/JTAG mode when using this connector.
 
 The coloring of the wiring harness is what SecuringHardware.com used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
 
@@ -346,6 +356,19 @@ The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port,
 | 12         | xCLK            |
 | 13         | xTRIG2          |
 | 14         | xIFCLK          |
+
+### I2C
+
+This header is designed specifically to match [Sparkfun's Qwiic](https://www.sparkfun.com/qwiic) and [Adafruit's STEMMA QT](https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt) system.
+
+Set the mode switch to I2C/SWD mode when using this connector.
+
+| Pin Number | I2C signal | FT2232H Pin |
+| ---------- | ---------- | ----------- |
+| 1          | GND        | ---         |
+| 2          | VCC        | ---         |
+| 3          | SDA        | BD1 and BD2 |
+| 4          | SCL        | BD0         |
 
 # Serial Numbers
 

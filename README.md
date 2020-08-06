@@ -336,7 +336,11 @@ In order to accomodate both SPI and I2C, the mode switch:
 
 ### LA
 
-Often it is necessary to debug a protocol with a logic analyzer. This header is designed to connect directly to the Bitmagic logic analyzer, or you could use the Bitmagic logic analyzer wiring harness to connect to any other pinout.
+Often it is necessary to debug a protocol with a logic analyzer. The LA port is best suited to monitoring push-pull signals where Tigard is an intended driver or receiver. It's tested and working well with UART, SPI and JTAG, and generally works with I2C. The expected use case is that you are using Tigard to communicate with a target, but need to debug that communication.
+
+The LA port may be used as a passive mechanical adapter although this usage is not supported. For best results, power the Tigard board but disconnect VTGT from the target. Additional effort will likely be required to ensure signal integrity
+
+This header is specifically designed to connect directly to the Bitmagic logic analyzer, or you could use the Bitmagic logic analyzer wiring harness to connect to any other tool.
 
 The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port, and 2 from the UART port.
 

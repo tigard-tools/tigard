@@ -2696,12 +2696,10 @@ F 3 "~" H 9750 3350 50  0001 C CNN
 	1    9750 3350
 	1    0    0    -1  
 $EndComp
-NoConn ~ 9550 3450
 NoConn ~ 9550 3550
 NoConn ~ 9550 3650
 NoConn ~ 10050 3650
 NoConn ~ 10050 3550
-NoConn ~ 10050 3450
 Wire Wire Line
 	1900 800  1900 900 
 Connection ~ 1900 900 
@@ -3005,7 +3003,7 @@ Text Label 8050 7400 2    50   ~ 0
 UART_RX
 Text Label 8050 7800 2    50   ~ 0
 DI
-Text Notes 9150 3850 0    50   ~ 0
+Text Notes 9450 4350 0    50   ~ 0
 https://github.com/esden/bitmagic
 $Comp
 L Connector_Generic_MountingPin:Conn_01x04_MountingPin J7
@@ -3274,4 +3272,28 @@ $EndComp
 Wire Wire Line
 	3250 2700 3300 2700
 Connection ~ 3300 2700
+$Comp
+L power:GND #PWR?
+U 1 1 5F303A88
+P 10150 3800
+F 0 "#PWR?" H 10150 3550 50  0001 C CNN
+F 1 "GND" H 10155 3627 50  0000 C CNN
+F 2 "" H 10150 3800 50  0001 C CNN
+F 3 "" H 10150 3800 50  0001 C CNN
+	1    10150 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 3450 10150 3450
+Wire Wire Line
+	10150 3450 10150 3750
+Wire Wire Line
+	9550 3450 9450 3450
+Wire Wire Line
+	9450 3450 9450 3750
+Wire Wire Line
+	9450 3750 10150 3750
+Connection ~ 10150 3750
+Wire Wire Line
+	10150 3750 10150 3800
 $EndSCHEMATC

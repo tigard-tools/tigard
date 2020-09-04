@@ -183,29 +183,31 @@ To use it with openocd:
 openocd -f tigard-jtag.cfg
 ```
 
-## SWD (on CORTEX header)
+## SWD (on CORTEX or JTAG header)
 
 #### Hookup:
 
 The SWD header a standard 10-pin header found on many SWD target boards. A short 'SWD' cable with the same header on both ends is the ideal way to hook up to most targets.
 
+You can also use the TCK(for SWCLK) and TDI(for SWDIO) pins of the JTAG header if you need a 2.54mm jumper-friendly connection to an SWD target.
+
 Be sure to select SWD on the mode selection switch. This connects the DI and DO pins with resistor R16 to make the bidirectional SWDIO pin, and connect it to pin 2 of the CORTEX header. Otherwise, the standard hookup sequence applies.
 
 #### Software:
 
-OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures.
+OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures. In order to use it for SWD with Tigard, you'll need to build it from source. The [directions from the AND!XOR DC27 Badge](https://hackaday.io/project/164346-andxor-dc27-badge/log/166464-swd-all-the-things) cover it step-by-step.
 
 The appropriate configuration file (make this a link to the file) should look like:
 
 ```
-interface ftdi
+adapter driver ftdi
+transport select swd
 ftdi_vid_pid 0x0403 0x6010
 ftdi_channel 1
-adapter_khz 2000
-ftdi_layout_init 0x0078 0x017b
-ftdi_layout_signal nTRST -ndata 0x0010 -noe 0x0040
+adapter speed 2000
+ftdi_layout_init 0x0018 0x05fb
+ftdi_layout_signal SWD_EN -data 0
 ftdi_layout_signal nSRST -ndata 0x0020 -noe 0x0040
-transport select swd
 ```
 
 To use it with openocd:

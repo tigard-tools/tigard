@@ -237,6 +237,7 @@ This will turn on when the level shifters are properly powered, either by your t
 
 * If you are in VTGT mode, and it does *not* come on, check your target power and your power and ground wiring to the target
 * If you are selecting a voltage and it does *not* come on, you have likely shorted power or ground somewhere with your wires or target.
+* There are corner cases where VTGT will get [latched to a voltage applied to an output pin](https://github.com/tigard-tools/tigard/issues/20). Establishing a habit of always starting with VTGT off will help avoid this.
 
 #### ALL LEDS ON:
 

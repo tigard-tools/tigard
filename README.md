@@ -216,6 +216,32 @@ To use it with openocd:
 openocd -f tigard-swd.cfg
 ```
 
+## iCE40 Programming
+The Lattice iCE40 family of FPGAs are popular for small scale projects because of their low cost and the availability of an open toolchain. While this is a *very* specific target, Tigard is well suited for programming devices since it has all the necessary pins readily available.
+
+#### Hookup:
+All the necessary pins are on the JTAG header. 
+The bonus "!?" pin is not populated by default. The JTAG !? pin and the UART RX pin are shorted in case you need to flash an iCE40 but don't want to solder your Tigard. See the pinouts table below for details.
+
+Be sure to select JTAG/SPI on the mode selection switch. This makes sure that COPI and CIPO are separated.
+
+If you are planning on programming SRAM instead of FLASH:
+* Swap COPI and CIPO
+* Disconnect CS from your FLASH, but leave it attached to the iCE40.
+
+
+#### Software:
+To program your target's nonvolatile FLASH, use iceprog:
+```
+iceprog -I B yourbitstream.bin
+```
+If you prefer to directly program the ice40's SRAM, make sure you adjust your wiring and again use iceprog:
+```
+iceprog -I B -S yourbitstream.bin
+```
+Remember that if you choose to program the SRAM, your bitstream will be lost on power cycle.
+
+
 ## Debugging
 
 #### PWR LED:
@@ -377,6 +403,23 @@ Set the mode switch to I2C/SWD mode when using this connector.
 | 3          | SDA        | BD1 and BD2 |
 | 4          | SCL        | BD0         |
 
+### iCE40
+Use the JTAG header with the addition of the "!?" pin which is not populated by default.
+
+| Pin Number | Label        | iCE40 Signal   | FT2232 Pin  |
+|------------|--------------|----------------|-------------|
+| 1          | VTGT         | VTGT           | ---
+| 2          | GND          | GND            | ---
+| 3          | TCK          | CLK            | BD0
+| 4          | TDI/MOSI/SDA | MOSI/COPI      | BD1
+| 5          | TDO/MISO/--  | MISO/CIPO      | BD2
+| 6          | TMS/SS/--    | ---            | ---
+| 7          | TRST/--/--   | CS/ICE_SS_B    | BD4
+| 8          | SRST/--/--   | CRESET         | BD5
+| 9          | !?           | CDONE          | BD6
+
+JTAG !? pin and the UART RX pin are shorted in case you need to flash an iCE40 but don't want to solder your Tigard.
+
 # Serial Numbers
 
 Tigard follows a convention for allocating serial numbers. If you decide to make and sell your own Tigards, please change the first two characters "TG" to something else.
@@ -391,3 +434,4 @@ Format: `TGMmxxxx`
 ## Allocated
 
 * First batch of 28 (Jul 5, 2020): TG010000 - TG01001b
+* Second batch of 42 (Aug 5, 2020): TG01001c - TG010046

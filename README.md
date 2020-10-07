@@ -62,13 +62,13 @@ This results in 3 distinct use cases:
 This switch controls how some of the I/O pins are connected for specific uses:
 
 * When set to JTAG/SPI mode:
- * All signals run straight through
- * CORTEX and JTAG headers are wired for normal JTAG
- * JTAG and SPI headers can be used for SPI
+  * All signals run straight through
+  * CORTEX and JTAG headers are wired for normal JTAG
+  * JTAG and SPI headers can be used for SPI
 * When set to SWD/I2C mode:
- * DO and DI are wired together to create SWDIO or SDA
- * CORTEX and JTAG headers can be used for SWD
- * JTAG and SPI headers can be used for I2C
+  * DO and DI are wired together to create SWDIO or SDA
+  * CORTEX and JTAG headers can be used for SWD
+  * JTAG and SPI headers can be used for I2C
 
 ## UART
 

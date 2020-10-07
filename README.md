@@ -43,6 +43,33 @@ Starting with the board completely disconnected:
 1. Power on your target.
 1. If you connected VTGT to your target, the VTGT LED will illuminate. If not, you can now select your voltage with the voltage switch
 
+## Switches
+There are two switches on Tigard to set the mode of operation. One controls voltage, one controls how several of the IO pins are wired. Both need to be set properly for a specific use mode. Details are in each of the interface sections further below, but here is a summary of the modes and their uses:
+
+#### Voltage Switch
+
+This switch chooses the reference voltage for the level shifters and the target system:
+* 1V8, 3V3, and 5V all apply a voltage to the VTGT pin.
+* VTGT disconnects the VTGT pin from supplies, and depends on the wire connected to the target to set the level shifter voltage.
+
+This results in 3 distinct use cases:
+1. **Target-Powered:** Set the switch to VTGT and connect the VTGT wire to the **powered** target. The **target** powers the level shifters.
+1. **Tigard-Powered:** Set the switch to a voltage, and connect the VTGT to the **unpowered** target. **Tigard** supplies power to the target.
+1. **Self-Powered:** Set the switch to a voltage, but do NOT connect the Vtgt wire. **Tigard** powers its own level shifters. **Target** powers itself.
+
+#### Mode Switch
+
+This switch controls how some of the I/O pins are connected for specific uses:
+
+* When set to JTAG/SPI mode:
+ * All signals run straight through
+ * CORTEX and JTAG headers are wired for normal JTAG
+ * JTAG and SPI headers can be used for SPI
+* When set to SWD/I2C mode:
+ * DO and DI are wired together to create SWDIO or SDA
+ * CORTEX and JTAG headers can be used for SWD
+ * JTAG and SPI headers can be used for I2C
+
 ## UART
 
 #### Hookup:

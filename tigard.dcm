@@ -25,6 +25,11 @@ D Power symbol creates a global label with name "VREF"
 K power-flag
 $ENDCMP
 #
+$CMP VREG
+D Power symbol creates a global label with name "VREG"
+K power-flag
+$ENDCMP
+#
 $CMP VTARGET
 D Power symbol creates a global label with name "VTARGET"
 K power-flag

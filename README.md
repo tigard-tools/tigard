@@ -166,7 +166,7 @@ In either case, you need to set the Tigard switches properly:
 
 #### Quirks:
 
-The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lines using common emitter instead of push-pull-tristate I/O, but the FT2232H doesn't support common emitter. Therefore:
+The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lines using open collector/open drain instead of push-pull-tristate I/O, but the FT2232H doesn't support that well. Therefore:
 
 * Only controller operation is supported, not Device
 * Tigard may not play nice if there are other controllers present on the I2C interface

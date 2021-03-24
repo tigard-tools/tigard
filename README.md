@@ -268,6 +268,31 @@ iceprog -I B -S yourbitstream.bin
 ```
 Remember that if you choose to program the SRAM, your bitstream will be lost on power cycle.
 
+## AVR ISP
+To program AVR microcontrollers including many Arduino boards, use avrdude with a custom configuration file.
+
+#### Hookup:
+Be sure to select JTAG/SPI on the mode selection switch. 
+
+#### Software:
+Avrdude is an open-source AVR flashing utility. You'll need a `tigard.conf` file identifying your tigard as an avrftdi-compatible device, and specifying which pins to use:
+```
+programmer
+  parent "avrftdi"
+  id = "tigard";
+  desc = "Tigard interface board";
+  usbdev = "B";
+  sck = 0;
+  mosi = 1;
+  miso = 2;
+  reset = 5;
+;
+```
+
+Then, use -C to add the configuration file, and '+' to indicat it's in addition to the already installed config files:
+```
+avrdude -C +tigard.conf
+```
 
 ## Debugging
 
@@ -446,6 +471,20 @@ Use the JTAG header with the addition of the "!?" pin which is not populated by 
 | 9          | !?           | CDONE          | BD6
 
 JTAG !? pin and the UART RX pin are shorted in case you need to flash an iCE40 but don't want to solder your Tigard.
+
+### AVR ISP
+The common 6-pin ICSP header found on many AVR boards requires the followuing hookup:
+
+| Pin Number | Label        | ISP Signal | ICSP Pin | FT2232 Pin  |
+|------------|--------------|------------|----------|-------------|
+| 1          | VTGT         | VTGT       |     2    | ---
+| 2          | GND          | GND        |     6    | ---
+| 3          | TCK          | SCK        |     3    | BD0
+| 4          | TDI/MOSI/SDA | MOSI       |     4    | BD1
+| 5          | TDO/MISO/--  | MISO       |     1    | BD2
+| 6          | TMS/SS/--    | ---        |    ---   | ---
+| 7          | TRST/--/--   | ---        |    ---   | ---
+| 8          | SRST/--/--   | RST        |     5    | BD5
 
 # Serial Numbers
 

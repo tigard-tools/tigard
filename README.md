@@ -1,3 +1,4 @@
+
 <img alt="Tigard PCB Render" width="320" align="right" src="https://raw.githubusercontent.com/tigard-tools/tigard/master/tigard-render.png">
 
 # Tigard
@@ -10,7 +11,24 @@ There are plenty of -232H series breakout boards, but they are generally designe
 
 The two exceptions are the Exodus Intellegence Hardware Interface Board which is not open hardware or commercially available, and [TIMEP](https://github.com/Matir/timep) which is the origin and heritage of this project.
 
-## Software
+#Contents
+- [Software Features](#software)
+- [Hardware Features](#hardware-features)
+- [Usage](#usage)
+  - [Hardware Hookup](#hardware-hookup)
+  - [Switches](#switches)
+  - [UART](#uart)
+  - [SPI](#spi)
+  - [I2C (on I2C or SPI header)](#i2c-on-i2c-or-spi-header)
+  - [JTAG (on JTAG or CORTEX header)](#jtag-on-jtag-or-cortex-header)
+  - [SWD (on CORTEX or JTAG header)](#swd-on-cortex-or-jtag-header)
+  - [iCE40 Programming](#ice40-programming)
+  - [AVR ISP](#avr-isp)
+- [Debugging](#debugging)
+- [Pinouts](#pinouts)
+- [Serial Numbers](#serial-numbers)
+
+# Software Features
 
 In general, Tigard was designed to work as-is with several tools and lbraries that already support the x232H family of chips. This includes:
 
@@ -18,8 +36,10 @@ In general, Tigard was designed to work as-is with several tools and lbraries th
 * OpenOCD and URJTAG for JTAG
 * Flashrom, libmpsse, pyftdi and other tools for SPI interfaces
 * libmpsse and pyftdi for I2C interfaces
+* iceprog for ice40 FPGAs
+* avrdude for AVR microcontrollers
 
-## Hardware Features
+# Hardware Features
 
 Highlights:
 
@@ -294,7 +314,7 @@ Then, use -C to add the configuration file, and '+' to indicat it's in addition 
 avrdude -C +tigard.conf
 ```
 
-## Debugging
+# Debugging
 
 #### PWR LED:
 
@@ -328,7 +348,7 @@ When all LEDS are on, then Tigard is probably working as intended. If you are st
 * It's a *hardware* issue. Try a different Tigard board to see if it persists
 * It's a *tigard* issue. Try a different x232H board to see if it persists
 
-## Pinouts
+# Pinouts
 
 There are way too many choices of 'standard' pinouts for all of these interfaces. Pinouts were chosen for ease of use, specificially:
 

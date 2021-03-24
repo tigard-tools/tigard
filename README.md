@@ -11,7 +11,7 @@ There are plenty of -232H series breakout boards, but they are generally designe
 
 The two exceptions are the Exodus Intellegence Hardware Interface Board which is not open hardware or commercially available, and [TIMEP](https://github.com/Matir/timep) which is the origin and heritage of this project.
 
-#Contents
+# Contents
 - [Software Features](#software)
 - [Hardware Features](#hardware-features)
 - [Usage](#usage)

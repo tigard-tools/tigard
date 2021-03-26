@@ -26,6 +26,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
   - [AVR ISP](#avr-isp)
 - [Debugging](#debugging)
 - [Pinouts](#pinouts)
+- [Stripes and Tails](#stripes-and-tails)
 - [Serial Numbers](#serial-numbers)
 
 # Software Features
@@ -506,6 +507,13 @@ The common 6-pin ICSP header found on many AVR boards requires the followuing ho
 | 7          | TRST/--/--   | ---        |    ---   | ---
 | 8          | SRST/--/--   | RST        |     5    | BD5
 
+# Stripes and Tails
+In order to support different interfaces, custom wiring harnesses or add-on boards might be useful. The preferred names are "Tigard Stripes" for add-on boards and "Tigard Tails" for wiring harnesses.
+
+* The `UART Tail` ships with Tigard and includes VTGT, GND, TX and RX
+* The `JTAG Tail` ships with Tigard and includes labeled multipurpose JTAG, SPI, and I2C wires
+* The `SOIC8 Tail` refers to inexpensive SOIC-8 clips with ribbon cables and 2x4 connectors compatible with the SPI/I2C header
+
 # Serial Numbers
 
 Tigard follows a convention for allocating serial numbers. If you decide to make and sell your own Tigards, please change the first two characters "TG" to something else.
@@ -521,3 +529,5 @@ Format: `TGMmxxxx`
 
 * First batch of 28 (Jul 5, 2020): TG010000 - TG01001b
 * Second batch of 42 (Aug 5, 2020): TG01001c - TG010046
+* Third batch of 496 (October 2020): TG100000 - TG1001f0
+* Fourth batch of 693 (January 2021): TG110000 - TG1102B5

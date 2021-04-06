@@ -438,9 +438,11 @@ In order to accomodate both SPI and I2C, the mode switch:
 
 ### LA
 
-Often it is necessary to debug a protocol with a logic analyzer. The LA port is best suited to monitoring push-pull signals where Tigard is an intended driver or receiver. It's tested and working well with UART, SPI and JTAG, and generally works with I2C. The expected use case is that you are using Tigard to communicate with a target, but need to debug that communication.
+The LA port makes it easier to hook up a logic analyzer to monitoring push-pull signals between Tigard and your target hardware. It's tested and working well with UART, SPI and JTAG, and generally works with I2C. 
 
-The LA port may be used as a passive mechanical adapter although this usage is not supported. For best results, power the Tigard board but disconnect VTGT from the target. Additional effort will likely be required to ensure signal integrity
+While there is a driver allowing you to use the FT2232H as a makeshift logic analyzer, that's not the intended purpose - the expected use case is that you are using Tigard to communicate with a target, but need to debug that communication using an external logic analyzer.
+
+The LA port may be used as a passive mechanical adapter although this usage is [not supported](https://github.com/tigard-tools/tigard/issues/20). For best results, power the Tigard board but disconnect VTGT from the target. Additional effort will likely be required to ensure signal integrity.
 
 This header is specifically designed to connect directly to the Bitmagic logic analyzer, or you could use the Bitmagic logic analyzer wiring harness to connect to any other tool.
 

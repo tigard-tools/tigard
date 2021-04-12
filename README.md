@@ -20,7 +20,8 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
   - [UART](#uart)
   - [SPI](#spi)
   - [I2C (on I2C or SPI header)](#i2c-on-i2c-or-spi-header)
-  - [JTAG (on JTAG or CORTEX header)](#jtag-on-jtag-or-cortex-header)
+  - [JTAG Debug (on JTAG or CORTEX header)](#jtag-debug-on-jtag-or-cortex-header)
+  - [JTAG Boundary Scan (on JTAG or CORTEX header)](#jtag-boundary-scan-on-jtag-or-cortex-header)
   - [SWD (on CORTEX or JTAG header)](#swd-on-cortex-or-jtag-header)
   - [iCE40 Programming](#ice40-programming)
   - [AVR ISP](#avr-isp)
@@ -198,7 +199,7 @@ flash.write(5,10)
 flash.read(0,32)
 ```
 
-## JTAG (on JTAG or CORTEX header)
+## JTAG Debug (on JTAG or CORTEX header)
 
 #### Hookup:
 
@@ -230,6 +231,46 @@ To use it with openocd:
 ```bash
 openocd -f tigard-jtag.cfg
 ```
+
+## JTAG Boundary Scan (on JTAG or CORTEX header)
+
+Boundary scan can be used to take control of a device to set I/O pin state (`EXTEST`), or to view the state of them during device operation (`SAMPLE`).
+
+#### Hookup:
+
+The hookup is the same as described in section [JTAG Debug (on JTAG or CORTEX header)](#jtag-debug-on-jtag-or-cortex-header).
+
+The pinout is compatible with the `Olimex ARM-USB-OCD` running on the `B` interface.
+
+#### Software:
+
+The [TopJTAG](www.topjtag) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
+
+* `Connection`: Generic FTDI FT2232
+* `Device`: Tigard V1.0 B
+* `Static Pins`: Olimex ARM-USB-OCD
+* `TCK Freq`: 2 MHz (adjust as needed)
+
+An open-source option that supports Tigard is [JTAG Boundary Scanner](https://github.com/viveris/jtag-boundary-scanner) which offers a Windows GUI, but the backend library is cross-platform (however written in C). This library offers many features such as an ability to talk to SPI devices attached to the target chip, where the SPI interface is run using JTAG boundary scan (warning - slow!). 
+
+Alpha Python bindings for this library are available in [PyJTAGBS](https://github.com/colinoflynn/pyjtagbs). Using Tigard from Python for checking the scan chain for example:
+
+```python
+from jtagbs import JTAGCore, JTAGBS
+
+interface = JTAGCore()
+jtag = JTAGBS(interface)
+
+probes = jtag.list_available_probes()
+print(probes)
+
+jtag.open_probe('Tigard V1.0 B')
+jtag.init_scanchain()
+
+print(jtag.list_devids())
+```
+
+See the PyJTAGBS documentation for further examples of loading BSDL files required to toggle specific pins. The listed probes should be `'Tigard V1.0 A TG100065A'` and `'Tigard V1.0 B TG100065B'` if the correct drivers are loaded.
 
 ## SWD (on CORTEX or JTAG header)
 

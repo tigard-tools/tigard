@@ -244,6 +244,23 @@ The pinout is compatible with the `Olimex ARM-USB-OCD` running on the `B` interf
 
 #### Software:
 
+[UrJTAG](http://urjtag.org/) is open-source jtag control software geared toward low-level and boundary scan use.
+
+We need to tell UrJTAG Tigard's VID and PID, as well as the fact that JTAG is on interface 1 (default is 0). Due to a bug it seems that TCK is miscalculated and is actually running 5 times what you select - 500khz in the case below.
+
+```
+jtag> cable ft2232 vid=0x403 pid=0x6010 interface=1
+Connected to libftdi driver.
+jtag> frequency 100000
+Setting TCK frequency to 100000 Hz
+jtag> detect
+IR length: 5
+Chain length: 1
+Device ID: 00010110001101010010001001001111 (0x1635224F)
+  Unknown manufacturer! (00100100111) (/usr/share/urjtag/MANUFACTURERS)
+jtag> 
+```
+
 The [TopJTAG](www.topjtag) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
 
 * `Connection`: Generic FTDI FT2232

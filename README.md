@@ -32,7 +32,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
 
 # Software Features
 
-In general, Tigard was designed to work as-is with several tools and lbraries that already support the x232H family of chips. This includes:
+In general, Tigard was designed to work as-is with several tools and libraries that already support the x232H family of chips. This includes:
 
 * USB-Serial drivers for UART access
 * OpenOCD and URJTAG for JTAG

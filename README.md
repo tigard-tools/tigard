@@ -459,7 +459,7 @@ This pinout prioritizes putting the FT2232H pins in sequential order - similar t
 
 In general, set the mode switch to SPI/JTAG mode when using this connector.
 
-The coloring of the wiring harness is what SecuringHardware.com used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
+The coloring of the wiring harness is what [SecuringHardware.com](https://SecuringHardware.com/) used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
 
 This header can also be used for I2C and SPI if the 8-pin header doesn't make sense in your application.
 

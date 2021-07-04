@@ -77,7 +77,7 @@ This switch chooses the reference voltage for the level shifters and the target 
 This results in 3 distinct use cases:
 1. **Target-Powered:** Set the switch to VTGT and connect the VTGT wire to the **powered** target. The **target** powers the level shifters.
 1. **Tigard-Powered:** Set the switch to a voltage, and connect the VTGT to the **unpowered** target. **Tigard** supplies power to the target.
-1. **Self-Powered:** Set the switch to a voltage, but do NOT connect the Vtgt wire. **Tigard** powers its own level shifters. **Target** powers itself.
+1. **Self-Powered:** Set the switch to a voltage, but do NOT connect the VTGT wire. **Tigard** powers its own level shifters. **Target** powers itself.
 
 #### Mode Switch
 

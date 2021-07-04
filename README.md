@@ -554,7 +554,7 @@ Use the JTAG header with the addition of the "!?" pin which is not populated by 
 JTAG !? pin and the UART RX pin are shorted in case you need to flash an iCE40 but don't want to solder your Tigard.
 
 ### AVR ISP
-The common 6-pin ICSP header found on many AVR boards requires the followuing hookup:
+The common 6-pin ICSP header found on many AVR boards requires the following hookup:
 
 | Pin Number | Label        | ISP Signal | ICSP Pin | FT2232 Pin  |
 |------------|--------------|------------|----------|-------------|

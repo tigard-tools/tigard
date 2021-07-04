@@ -595,6 +595,7 @@ Format: `TGMmxxxx`
 # Getting Tigard
 ## Where to Buy
 Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com/securinghw/tigard), [Mouser](https://www.mouser.com/ProductDetail/Crowd-Supply/TIGARD-V1?qs=CiayqK2gdcKvj%252BQdaVxosg%3D%3D), or [1BitSquared](https://1bitsquared.com/collections/embedded-hardware/products/tigard)
+
 Tigard can be aquired in Europe via [1BitSquared's German store](https://1bitsquared.de/products/tigard)
 
 ## DIY Tigards
@@ -604,6 +605,6 @@ If you choose to manufacture your own tigard boards, we recommend/request the fo
 * Physically differentiate your boards somehow - choosing a different color is likely easiest - so they are not mistaken for boards from SecuringHardware.com
 * You are welcome to call them "Tigard" and program that into the usb product descriptor in the EEPROM
 * Program accurate manufacturer information in usb manufacturer descriptor the EEPROM
-* Use serial numbers that do not confict with the ones [noted above](#serial-numbers) - do not use the 'TG' prefix
+* Use serial numbers that do not conflict with the ones [noted above](#serial-numbers) - do not use the 'TG' prefix
 
 SecuringHardware.com tests, verifies, and supports every Tigard they manufacture and sell. Please let us know about any [design issues](https://github.com/tigard-tools/tigard/issues) while making your own devices, but if you're having hardware issues with a third-party Tigard that you bought, you will need to resolve that with the seller or manufacturer.

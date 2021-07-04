@@ -178,7 +178,7 @@ The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lin
 
 #### Hacks:
 
-To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performace **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
+To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performance **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
 
 Many I2C targets already have pullup resistors. In addition, all of Tigard's I/O pins have a weak 100K ohm pullup. In testing, this has been sufficient for both in-circuit and external use of most I2C devices. If you need stronger pullups on I2C, you can temporarily add them by pulling up COPI and SCK on the SPI header, or TCK and TDI on the JTAG header.
 

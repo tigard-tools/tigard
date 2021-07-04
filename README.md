@@ -261,7 +261,7 @@ Device ID: 00010110001101010010001001001111 (0x1635224F)
 jtag> 
 ```
 
-The [TopJTAG](www.topjtag) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
+The [TopJTAG](http://www.topjtag.com/) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
 
 * `Connection`: Generic FTDI FT2232
 * `Device`: Tigard V1.0 B

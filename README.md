@@ -32,7 +32,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
 
 # Software Features
 
-In general, Tigard was designed to work as-is with several tools and lbraries that already support the x232H family of chips. This includes:
+In general, Tigard was designed to work as-is with several tools and libraries that already support the x232H family of chips. This includes:
 
 * USB-Serial drivers for UART access
 * OpenOCD and URJTAG for JTAG
@@ -77,7 +77,7 @@ This switch chooses the reference voltage for the level shifters and the target 
 This results in 3 distinct use cases:
 1. **Target-Powered:** Set the switch to VTGT and connect the VTGT wire to the **powered** target. The **target** powers the level shifters.
 1. **Tigard-Powered:** Set the switch to a voltage, and connect the VTGT to the **unpowered** target. **Tigard** supplies power to the target.
-1. **Self-Powered:** Set the switch to a voltage, but do NOT connect the Vtgt wire. **Tigard** powers its own level shifters. **Target** powers itself.
+1. **Self-Powered:** Set the switch to a voltage, but do NOT connect the VTGT wire. **Tigard** powers its own level shifters. **Target** powers itself.
 
 #### Mode Switch
 
@@ -178,7 +178,7 @@ The FT2232H has a very limited I2C implementation. I2C depends on shared I/O lin
 
 #### Hacks:
 
-To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performace **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
+To accomodate both I2C and SWD, the DI and DO lines are combined through resistor R16. This is required for SWD and acceptable for I2C. For the best I2C performance **with the tradeoff of breaking SWD functionality**, bridge the HACK solder jumper on the bottom. This will bypass resistor R16, shorting DI and DO when the MODE switch is set to SWD/I2C.
 
 Many I2C targets already have pullup resistors. In addition, all of Tigard's I/O pins have a weak 100K ohm pullup. In testing, this has been sufficient for both in-circuit and external use of most I2C devices. If you need stronger pullups on I2C, you can temporarily add them by pulling up COPI and SCK on the SPI header, or TCK and TDI on the JTAG header.
 
@@ -261,7 +261,7 @@ Device ID: 00010110001101010010001001001111 (0x1635224F)
 jtag> 
 ```
 
-The [TopJTAG](www.topjtag) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
+The [TopJTAG](http://www.topjtag.com/) software is one of the easier to use options, but is commercial ($100) and Windows-only. This includes a "waveform view" that allows you to view arbitrary pin states as if you had a logic analyzer on the device while it is running. If using TopJTAG, set the following as the JTAG connection:
 
 * `Connection`: Generic FTDI FT2232
 * `Device`: Tigard V1.0 B
@@ -459,7 +459,7 @@ This pinout prioritizes putting the FT2232H pins in sequential order - similar t
 
 In general, set the mode switch to SPI/JTAG mode when using this connector.
 
-The coloring of the wiring harness is what SecuringHardware.com used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
+The coloring of the wiring harness is what [SecuringHardware.com](https://SecuringHardware.com/) used for their Adafruit FT232H wiring harness for several years. The colors were chosen because frequently black-brown-red-orange are used with logic analyzers in class, so unique colors were chosen for this wiring harness.
 
 This header can also be used for I2C and SPI if the 8-pin header doesn't make sense in your application.
 
@@ -554,7 +554,7 @@ Use the JTAG header with the addition of the "!?" pin which is not populated by 
 JTAG !? pin and the UART RX pin are shorted in case you need to flash an iCE40 but don't want to solder your Tigard.
 
 ### AVR ISP
-The common 6-pin ICSP header found on many AVR boards requires the followuing hookup:
+The common 6-pin ICSP header found on many AVR boards requires the following hookup:
 
 | Pin Number | Label        | ISP Signal | ICSP Pin | FT2232 Pin  |
 |------------|--------------|------------|----------|-------------|
@@ -595,6 +595,7 @@ Format: `TGMmxxxx`
 # Getting Tigard
 ## Where to Buy
 Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com/securinghw/tigard), [Mouser](https://www.mouser.com/ProductDetail/Crowd-Supply/TIGARD-V1?qs=CiayqK2gdcKvj%252BQdaVxosg%3D%3D), or [1BitSquared](https://1bitsquared.com/collections/embedded-hardware/products/tigard)
+
 Tigard can be aquired in Europe via [1BitSquared's German store](https://1bitsquared.de/products/tigard)
 
 ## DIY Tigards
@@ -604,6 +605,6 @@ If you choose to manufacture your own tigard boards, we recommend/request the fo
 * Physically differentiate your boards somehow - choosing a different color is likely easiest - so they are not mistaken for boards from SecuringHardware.com
 * You are welcome to call them "Tigard" and program that into the usb product descriptor in the EEPROM
 * Program accurate manufacturer information in usb manufacturer descriptor the EEPROM
-* Use serial numbers that do not confict with the ones [noted above](#serial-numbers) - do not use the 'TG' prefix
+* Use serial numbers that do not conflict with the ones [noted above](#serial-numbers) - do not use the 'TG' prefix
 
 SecuringHardware.com tests, verifies, and supports every Tigard they manufacture and sell. Please let us know about any [design issues](https://github.com/tigard-tools/tigard/issues) while making your own devices, but if you're having hardware issues with a third-party Tigard that you bought, you will need to resolve that with the seller or manufacturer.

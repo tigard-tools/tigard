@@ -351,10 +351,10 @@ Remember that if you choose to program the SRAM, your bitstream will be lost on 
 To program AVR microcontrollers including many Arduino boards, use avrdude with a custom configuration file.
 
 #### Hookup:
-Be sure to select JTAG/SPI on the mode selection switch. 
+Be sure to select JTAG/SPI on the mode selection switch. Use SRST as your reset.
 
 #### Software:
-Avrdude is an open-source AVR flashing utility. You'll need a `tigard.conf` file identifying your tigard as an avrftdi-compatible device, and specifying which pins to use:
+Avrdude is an open-source AVR flashing utility. Create the following `tigard.conf` file in order to identify Tigard as an avrftdi-compatible device and specify which pins to use:
 ```
 programmer
   parent "avrftdi"
@@ -368,9 +368,9 @@ programmer
 ;
 ```
 
-Then, use -C to add the configuration file, and '+' to indicat it's in addition to the already installed config files:
+Then, use `-C +tigard.conf` to add the configuration file, and `-c tigard` to indicate your programmer:
 ```
-avrdude -C +tigard.conf
+avrdude -C +tigard.conf -c tigard
 ```
 
 # Debugging

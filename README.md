@@ -29,6 +29,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
 - [Pinouts](#pinouts)
 - [Stripes and Tails](#stripes-and-tails)
 - [Serial Numbers](#serial-numbers)
+- [Getting Tigard](#getting-tigard)
 
 # Software Features
 
@@ -594,7 +595,7 @@ Format: `TGMmxxxx`
 
 # Getting Tigard
 ## Where to Buy
-Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com/securinghw/tigard), [Mouser](https://www.mouser.com/ProductDetail/Crowd-Supply/TIGARD-V1?qs=CiayqK2gdcKvj%252BQdaVxosg%3D%3D), or [1BitSquared](https://1bitsquared.com/collections/embedded-hardware/products/tigard)
+Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com/securinghw/tigard), [Mouser](https://www.mouser.com/ProductDetail/Securing-Hardware/TIGARD-V1?qs=aP1CjGhiNiFnjSEE%2FnXyEw%3D%3D), or [1BitSquared](https://1bitsquared.com/collections/embedded-hardware/products/tigard)
 
 Tigard can be aquired in Europe via [1BitSquared's German store](https://1bitsquared.de/products/tigard)
 

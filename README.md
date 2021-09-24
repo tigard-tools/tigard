@@ -592,6 +592,7 @@ Format: `TGMmxxxx`
 * Second batch of 42 (Aug 5, 2020): TG01001c - TG010046
 * Third batch of 496 (October 2020): TG100000 - TG1001f0
 * Fourth batch of 693 (January 2021): TG110000 - TG1102B5
+* Fourth batch of 697 (September 2021): TG110400 - TG1106B9
 
 # Getting Tigard
 ## Where to Buy

@@ -19,7 +19,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
   - [Switches](#switches)
   - [UART](#uart)
   - [SPI](#spi)
-  - [I2C (on I2C or SPI header)](#i2c-on-i2c-or-spi-header)
+  - [I2C (on I2C or SPI header)](#i2c-on-i2c-spi-or-jtag-header)
   - [JTAG Debug (on JTAG or CORTEX header)](#jtag-debug-on-jtag-or-cortex-header)
   - [JTAG Boundary Scan (on JTAG or CORTEX header)](#jtag-boundary-scan-on-jtag-or-cortex-header)
   - [SWD (on CORTEX or JTAG header)](#swd-on-cortex-or-jtag-header)

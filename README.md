@@ -161,6 +161,11 @@ In addition, the SPI header is laid out to be the same orientation as the pins o
 * Connect your clip or socket to the header. Pay attention to pin 1, which is usually marked on sockets or has a red/highlighted wire on ribbon cables
 * Connect your clip to the target or insert your chip into the socket
 
+Finally, the JTAG header can also be used to get the I2C signals on .1" individual pins:
+
+* Connect the 8-wire JTAG harness to the JTAG connector
+* Connect the white SCL and grey SDA wires to your target's I2C pins
+
 In either case, you need to set the Tigard switches properly:
 
 * Select I2C on the mode selection switch

@@ -147,7 +147,7 @@ f.write(flash.read(0,len(flash)))
 f.close()
 ```
 
-## I2C (on I2C or SPI header)
+## I2C (on I2C, SPI, or JTAG header)
 
 #### Hookup:
 

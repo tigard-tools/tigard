@@ -28,6 +28,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
 - [Debugging](#debugging)
 - [Pinouts](#pinouts)
 - [Stripes and Tails](#stripes-and-tails)
+- [Dens (cases)](#dens)
 - [Serial Numbers](#serial-numbers)
 - [Getting Tigard](#getting-tigard)
 
@@ -579,6 +580,13 @@ In order to support different interfaces, custom wiring harnesses or add-on boar
 * The `UART Tail` ships with Tigard and includes VTGT, GND, TX and RX
 * The `JTAG Tail` ships with Tigard and includes labeled multipurpose JTAG, SPI, and I2C wires
 * The `SOIC8 Tail` refers to inexpensive SOIC-8 clips with ribbon cables and 2x4 connectors compatible with the SPI/I2C header
+
+# Dens
+Tigard is supplied as a bare board, but there are several options for 3d printing mounts and cases - 'dens' - for your Tigard.:
+
+* The first [TigarDen](https://github.com/hamid-elaosta/TigarDen) by hamid is a multi-piece top and bottom case for holding tigard
+* A [bottom-only case](https://www.thingiverse.com/thing:5166570) by phaktor has neat tiger stripes on the bottom, or can be printed in a single color
+* A [hinged case](https://www.thingiverse.com/thing:5169952) by professor_plum holds a tigard, bitmagic, and several probes
 
 # Serial Numbers
 

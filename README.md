@@ -318,7 +318,7 @@ transport select swd
 ftdi_vid_pid 0x0403 0x6010
 ftdi_channel 1
 adapter speed 2000
-ftdi_layout_init 0x0018 0x05fb
+ftdi_layout_init 0x0018 0x055b
 ftdi_layout_signal SWD_EN -data 0
 ftdi_layout_signal nSRST -ndata 0x0020 -noe 0x0040
 ```

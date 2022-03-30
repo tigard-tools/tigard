@@ -22,7 +22,7 @@ The two exceptions are the Exodus Intellegence Hardware Interface Board which is
   - [I2C (on I2C or SPI header)](#i2c-on-i2c-spi-or-jtag-header)
   - [JTAG Debug (on JTAG or CORTEX header)](#jtag-debug-on-jtag-or-cortex-header)
   - [JTAG Boundary Scan (on JTAG or CORTEX header)](#jtag-boundary-scan-on-jtag-or-cortex-header)
-  - [SWD (on CORTEX or JTAG header)](#swd-on-cortex-or-jtag-header)
+  - [SWD (on CORTEX header)](#swd-on-cortex-header)
   - [iCE40 Programming](#ice40-programming)
   - [AVR ISP](#avr-isp)
 - [Debugging](#debugging)
@@ -296,13 +296,11 @@ print(jtag.list_devids())
 
 See the PyJTAGBS documentation for further examples of loading BSDL files required to toggle specific pins. The listed probes should be `'Tigard V1.0 A TG100065A'` and `'Tigard V1.0 B TG100065B'` if the correct drivers are loaded.
 
-## SWD (on CORTEX or JTAG header)
+## SWD (on CORTEX header)
 
 #### Hookup:
 
 The SWD header a standard 10-pin header found on many SWD target boards. A short 'SWD' cable with the same header on both ends is the ideal way to hook up to most targets.
-
-You can also use the TCK(for SWCLK) and TDI(for SWDIO) pins of the JTAG header if you need a 2.54mm jumper-friendly connection to an SWD target.
 
 Be sure to select SWD on the mode selection switch. This connects the DI and DO pins with resistor R16 to make the bidirectional SWDIO pin, and connect it to pin 2 of the CORTEX header. Otherwise, the standard hookup sequence applies.
 

@@ -227,9 +227,9 @@ interface ftdi
 ftdi_vid_pid 0x0403 0x6010
 ftdi_channel 1
 adapter_khz 2000
-ftdi_layout_init 0x0078 0x017b
-ftdi_layout_signal nTRST -ndata 0x0010 -noe 0x0040
-ftdi_layout_signal nSRST -ndata 0x0020 -noe 0x0040
+ftdi_layout_init 0x0038 0x003b
+ftdi_layout_signal nTRST -data 0x0010
+ftdi_layout_signal nSRST -data 0x0020
 transport select jtag
 ```
 
@@ -316,9 +316,9 @@ transport select swd
 ftdi_vid_pid 0x0403 0x6010
 ftdi_channel 1
 adapter speed 2000
-ftdi_layout_init 0x0018 0x055b
+ftdi_layout_init 0x0018 0x001b
 ftdi_layout_signal SWD_EN -data 0
-ftdi_layout_signal nSRST -ndata 0x0020 -noe 0x0040
+ftdi_layout_signal nSRST -data 0x0020
 ```
 
 To use it with openocd:

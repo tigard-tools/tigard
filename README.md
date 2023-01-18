@@ -359,7 +359,12 @@ To program AVR microcontrollers including many Arduino boards, use avrdude with 
 Be sure to select JTAG/SPI on the mode selection switch. Use SRST as your reset.
 
 #### Software:
-Avrdude is an open-source AVR flashing utility. Create the following `tigard.conf` file in order to identify Tigard as an avrftdi-compatible device and specify which pins to use:
+Avrdude is an open-source AVR flashing utility. Avrdude 7.1 and later have built-in support for Tigard - all you need to do is:
+```
+avrdude -c tigard
+```
+
+For older versions, create the following `tigard.conf` file in order to identify Tigard as an avrftdi-compatible device and specify which pins to use:
 ```
 programmer
   parent "avrftdi"

@@ -9,7 +9,7 @@ An FTDI FT2232H-based multi-protocol tool for hardware hacking.
 
 There are plenty of -232H series breakout boards, but they are generally designed to be an easy way to adapt it to a specific use, and not designed for regularly plugging in to all different target systems.
 
-The two exceptions are the Exodus Intellegence Hardware Interface Board which is not open hardware or commercially available, and [TIMEP](https://github.com/Matir/timep) which is the origin and heritage of this project.
+The two exceptions are the Exodus Intelligence Hardware Interface Board which is not open hardware or commercially available, and [TIMEP](https://github.com/Matir/timep) which is the origin and heritage of this project.
 
 # Contents
 - [Software Features](#software)

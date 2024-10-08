@@ -616,7 +616,7 @@ Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com
 
 Tigard can be aquired in Europe via [1BitSquared's German store](https://1bitsquared.de/products/tigard)
 
-10+ boards can be ordered at a discound direct from [SecuringHardware.com](https://learn.securinghardware.com/product/tigard/)
+10+ boards can be ordered at a discount direct from [SecuringHardware.com](https://learn.securinghardware.com/product/tigard/)
 
 ## DIY Tigards
 Tigard is published with the [CC-BY-SA 4.0 License](https://github.com/tigard-tools/tigard/blob/master/LICENSE.txt). This means you have permission and are encouraged to make your own devices, or make modifications to the Tigard design, as long as you attribute the project and share your changes.

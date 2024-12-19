@@ -590,6 +590,7 @@ Tigard is supplied as a bare board, but there are several options for 3d printin
 * The first [TigarDen](https://github.com/hamid-elaosta/TigarDen) by hamid is a multi-piece top and bottom case for holding tigard
 * A [bottom-only case](https://www.thingiverse.com/thing:5166570) by phaktor has neat tiger stripes on the bottom, or can be printed in a single color
 * A [hinged case](https://www.thingiverse.com/thing:5169952) by professor_plum holds a tigard, bitmagic, and several probes
+* A [simplified 2-piece case](https://cad.onshape.com/documents/832906f0b96360664fedfe62/w/f1b917fd93e5b559c0927cf4/e/eb5666e6e328afd821567f83) by jwise for milling or printing
 
 # Serial Numbers
 
@@ -614,9 +615,11 @@ Format: `TGMmxxxx`
 ## Where to Buy
 Tigard can be purchased directly from [Crowd Supply](https://www.crowdsupply.com/securinghw/tigard), [Mouser](https://www.mouser.com/ProductDetail/Securing-Hardware/TIGARD-V1?qs=aP1CjGhiNiFnjSEE%2FnXyEw%3D%3D), or [1BitSquared](https://1bitsquared.com/collections/embedded-hardware/products/tigard)
 
+[HackerWarehouse](https://hackerwarehouse.com/product/tigard/) also has a [laser-cut acrylic case](https://hackerwarehouse.com/product/tigard-case/) designed by SynapticRewrite
+
 Tigard can be aquired in Europe via [1BitSquared's German store](https://1bitsquared.de/products/tigard)
 
-10+ boards can be ordered at a discount direct from [SecuringHardware.com](https://learn.securinghardware.com/product/tigard/)
+10+ boards can be ordered at a discount direct from [SecuringHardware.com](https://learn.securinghardware.com/product/tigard/). Contact tigards - at - securinghw.com for wholesale orders.
 
 ## DIY Tigards
 Tigard is published with the [CC-BY-SA 4.0 License](https://github.com/tigard-tools/tigard/blob/master/LICENSE.txt). This means you have permission and are encouraged to make your own devices, or make modifications to the Tigard design, as long as you attribute the project and share your changes.

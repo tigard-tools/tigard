@@ -327,6 +327,31 @@ To use it with openocd:
 openocd -f tigard-swd.cfg
 ```
 
+To use it on Linux with the Visual Studio Code plugin cortex-debug, using the example of an STM32F091, the launch.json file should resemble something like this:
+```json
+{
+  "configurations": [
+    {
+      "name": "Tigard Linux",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "executable": "${workspaceFolder}/build/Firmware.elf",
+      "request": "launch",
+      "serverpath": "/usr/bin/openocd",
+      "servertype": "openocd",
+      "device": "STM32F091",
+      "configFiles": [
+        "${workspaceFolder}/tigard-swd.cfg",
+        "/usr/share/openocd/scripts/target/stm32f0x.cfg"
+      ],
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "svdFile": "${workspaceFolder}/STM32F0x1.svd"
+    }
+  ]
+}
+```
+
 ## iCE40 Programming
 The Lattice iCE40 family of FPGAs are popular for small scale projects because of their low cost and the availability of an open toolchain. While this is a *very* specific target, Tigard is well suited for programming devices since it has all the necessary pins readily available.
 

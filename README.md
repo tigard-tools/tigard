@@ -608,8 +608,11 @@ Format: `TGMmxxxx`
 * First batch of 28 (Jul 5, 2020): TG010000 - TG01001b
 * Second batch of 42 (Aug 5, 2020): TG01001c - TG010046
 * Third batch of 496 (October 2020): TG100000 - TG1001f0
-* Fourth batch of 693 (January 2021): TG110000 - TG1102B5
-* Fourth batch of 697 (September 2021): TG110400 - TG1106B9
+* Fourth batch of 693 (January 2021): TG110000 - TG1102b5
+* Fourth batch of 697 (September 2021): TG110400 - TG1106b9<br>Note: This batch's through hole components were not soldered with a selective solder wave machine. Some needed rework because the "hack" jumper was accidentally bridged with solder.
+* Fifth batch of 1400 (Nov 2022): circa TG110700 - TG110c7f
+* Sixth batch of 1400 (Jan 2024): circa TG110c80 - TG 1111ff <br>Note: This batch had the jtag header assembled in the wrong position. It's supposed to be an 8 pin header in a 9 hole footprint. Pin 9 of the footprint should be vacant - it's a special purpose pin only there for flashing ice40 fpgas like icebreaker. However, pin 1 was mistakenly left vacant instead. I added a header in pin 1 and trimmed pin 9 them so that the 8-pin jtag wiring harness can't be put on wrong and so the 9-pin uart header is not accidentally put there.
+* Seventh batch of 2100 (Jan 2025): circa TG111200-TG111834
 
 # Getting Tigard
 ## Where to Buy

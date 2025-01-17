@@ -218,19 +218,21 @@ Be sure to select JTAG on the mode selection switch. This makes sure that TDI an
 
 #### Software:
 
+**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce).
+
 OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures.
 
 The appropriate configuration file (make this a link to the file) should look like:
 
 ```
-interface ftdi
-ftdi_vid_pid 0x0403 0x6010
-ftdi_channel 1
-adapter_khz 2000
-ftdi_layout_init 0x0038 0x003b
-ftdi_layout_signal nTRST -data 0x0010
-ftdi_layout_signal nSRST -data 0x0020
+adapter driver ftdi
 transport select jtag
+ftdi vid_pid 0x0403 0x6010
+ftdi channel 1
+adapter speed 2000
+ftdi layout_init 0x0038 0x003b
+ftdi layout_signal nTRST -data 0x0010
+ftdi layout_signal nSRST -data 0x0020
 ```
 
 To use it with openocd:
@@ -306,6 +308,8 @@ Be sure to select SWD on the mode selection switch. This connects the DI and DO 
 
 #### Software:
 
+**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce).
+
 OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures. In order to use it for SWD with Tigard, you'll need to build it from source. The [directions from the AND!XOR DC27 Badge](https://hackaday.io/project/164346-andxor-dc27-badge/log/166464-swd-all-the-things) cover it step-by-step.
 
 The appropriate configuration file (make this a link to the file) should look like:
@@ -313,12 +317,12 @@ The appropriate configuration file (make this a link to the file) should look li
 ```
 adapter driver ftdi
 transport select swd
-ftdi_vid_pid 0x0403 0x6010
-ftdi_channel 1
+ftdi vid_pid 0x0403 0x6010
+ftdi channel 1
 adapter speed 2000
-ftdi_layout_init 0x0028 0x002b
-ftdi_layout_signal SWD_EN -data 0
-ftdi_layout_signal nSRST -data 0x0020
+ftdi layout_init 0x0028 0x002b
+ftdi layout_signal SWD_EN -data 0
+ftdi layout_signal nSRST -data 0x0020
 ```
 
 To use it with openocd:

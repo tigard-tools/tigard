@@ -218,6 +218,8 @@ Be sure to select JTAG on the mode selection switch. This makes sure that TDI an
 
 #### Software:
 
+**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce).
+
 OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures.
 
 The appropriate configuration file (make this a link to the file) should look like:
@@ -305,6 +307,8 @@ The SWD header a standard 10-pin header found on many SWD target boards. A short
 Be sure to select SWD on the mode selection switch. This connects the DI and DO pins with resistor R16 to make the bidirectional SWDIO pin, and connect it to pin 2 of the CORTEX header. Otherwise, the standard hookup sequence applies.
 
 #### Software:
+
+**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce).
 
 OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures. In order to use it for SWD with Tigard, you'll need to build it from source. The [directions from the AND!XOR DC27 Badge](https://hackaday.io/project/164346-andxor-dc27-badge/log/166464-swd-all-the-things) cover it step-by-step.
 

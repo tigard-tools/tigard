@@ -433,9 +433,11 @@ There are way too many choices of 'standard' pinouts for all of these interfaces
 
 ### UART
 
+2.54mm pitch. 1x9 pin header.
+
 This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards
 
-The coloring of the wiring harness is intended to match most common usb-serial cables
+The coloring of VTGT, GND, TX, and RX is intended to match most common usb-serial cables. The remaining wires are included, but not installed on the header, so users can optionally install them.
 
 | Pin Number | UART Signal | Color | FT2232H Pin |
 | ---------- | ----------- | ----- | ----------- |
@@ -450,6 +452,8 @@ The coloring of the wiring harness is intended to match most common usb-serial c
 | 9          | DCD         | --    | AD6         |
 
 ### SWD
+
+1.27mm pitch. 2x5 pin header.
 
 This is a standard pinout. In order to accomodate both SWD and JTAG, the mode switch:
 
@@ -470,6 +474,8 @@ This is a standard pinout. In order to accomodate both SWD and JTAG, the mode sw
 | 10         | nSRST      | BD5         | nSRST       | BD5         |
 
 ### JTAG
+
+2.54mm pitch. 1x8 pin header.
 
 This pinout prioritizes putting the FT2232H pins in sequential order - similar to many x232H breakout boards. 
 
@@ -492,6 +498,8 @@ This header can also be used for I2C and SPI if the 8-pin header doesn't make se
 
 ### SPI
 
+2.54mm pitch. 2x4 pin header.
+
 This header is designed specifically to match the pinout of most 8-pin SPI and I2C chips, so that a jumper to a chip clip or a socket would align properly.
 
 In order to accomodate both SPI and I2C, the mode switch:
@@ -511,6 +519,8 @@ In order to accomodate both SPI and I2C, the mode switch:
 | 8               | 2                 | VTGT       | --          |
 
 ### LA
+
+1.27mm pitch. 2x7 pin header.
 
 The LA port makes it easier to hook up a logic analyzer to monitoring push-pull signals between Tigard and your target hardware. It's tested and working well with UART, SPI and JTAG, and generally works with I2C. 
 
@@ -540,6 +550,8 @@ The 8 most interesting signals are connected - 6 from the JTAG/SWD/SPI/I2C port,
 | 14         | xIFCLK          |
 
 ### I2C
+
+1mm pitch. 1x4 pin header. JST SH compatible.
 
 This header is designed specifically to match [Sparkfun's Qwiic](https://www.sparkfun.com/qwiic) and [Adafruit's STEMMA QT](https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt) system.
 

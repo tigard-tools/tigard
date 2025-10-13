@@ -43,6 +43,8 @@ In general, Tigard was designed to work as-is with several tools and libraries t
 * iceprog for ice40 FPGAs
 * avrdude for AVR microcontrollers
 
+Also, users have used Tigard with [BMDA](/../../issues/66), [Mitou jtag](/../../issues/79), [VSCode](/../../pull/75), and [SPI via FTDI](/../../issues/40)
+
 # Hardware Features
 
 Highlights:

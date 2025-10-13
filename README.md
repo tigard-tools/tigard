@@ -253,7 +253,7 @@ The pinout is compatible with the `Olimex ARM-USB-OCD` running on the `B` interf
 
 #### Software:
 
-[UrJTAG](http://urjtag.org/) is open-source jtag control software geared toward low-level and boundary scan use.
+[UrJTAG](https://urjtag.sourceforge.io/) is open-source jtag control software geared toward low-level and boundary scan use.
 
 We need to tell UrJTAG Tigard's VID and PID, as well as the fact that JTAG is on interface 1 (default is 0). Due to a bug it seems that TCK is miscalculated and is actually running 5 times what you select - 500khz in the case below.
 

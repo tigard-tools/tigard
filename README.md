@@ -609,6 +609,7 @@ Tigard is supplied as a bare board, but there are several options for 3d printin
 * A [bottom-only case](https://www.thingiverse.com/thing:5166570) by phaktor has neat tiger stripes on the bottom, or can be printed in a single color
 * A [hinged case](https://www.thingiverse.com/thing:5169952) by professor_plum holds a tigard, bitmagic, and several probes
 * A [simplified 2-piece case](https://cad.onshape.com/documents/832906f0b96360664fedfe62/w/f1b917fd93e5b559c0927cf4/e/eb5666e6e328afd821567f83) by jwise for milling or printing
+* [tigard-tray](https://github.com/tigard-tools/tigard-tray) is a 3d printed tray that holds tigard, bitmagic, and 9 probe clips while protecting the pins, so that it can slide in and out of a mesh pocket in a zippered case.
 
 # Serial Numbers
 

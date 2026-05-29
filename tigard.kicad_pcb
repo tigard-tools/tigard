@@ -29533,7 +29533,7 @@
 			)
 		)
 		(property "Value" "ISO"
-			(at 2.35 0 90)
+			(at 0 -1.6 0)
 			(layer "B.SilkS")
 			(uuid "fde9525d-ecad-4f68-ac8d-f54f5ed9fea0")
 			(effects

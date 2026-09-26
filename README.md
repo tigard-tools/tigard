@@ -229,7 +229,7 @@ The appropriate configuration file (make this a link to the file) should look li
 ```
 adapter driver ftdi
 transport select jtag
-ftdi vid_pid 0x0403 0x6010
+adapter usb vid_pid 0x0403 0x6010
 ftdi channel 1
 adapter speed 2000
 ftdi layout_init 0x0038 0x003b
@@ -319,7 +319,7 @@ The appropriate configuration file (make this a link to the file) should look li
 ```
 adapter driver ftdi
 transport select swd
-ftdi vid_pid 0x0403 0x6010
+adapter usb vid_pid 0x0403 0x6010
 ftdi channel 1
 adapter speed 2000
 ftdi layout_init 0x0028 0x002b

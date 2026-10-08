@@ -43,7 +43,7 @@ In general, Tigard was designed to work as-is with several tools and libraries t
 * iceprog for ice40 FPGAs
 * avrdude for AVR microcontrollers
 
-Also, users have used Tigard with [BMDA](/../../issues/66), [Mitou jtag](/../../issues/79), [VSCode](/../../pull/75), and [SPI via FTDI](/../../issues/40)
+Also, users have used Tigard with [Mitou jtag](/../../issues/79), [VSCode](/../../pull/75), and [SPI via FTDI](/../../issues/40)
 
 # Hardware Features
 
@@ -220,9 +220,9 @@ Be sure to select JTAG on the mode selection switch. This makes sure that TDI an
 
 #### Software:
 
-**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce).
+[OpenOCD](https://openocd.org/) is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures.
 
-OpenOCD is a powerful tool for On-Chip Debugging of ARM, MIPS, and some other architectures.
+**NOTE: These OpenOCD configs require OpenOCD v0.12+**. Previous versions may use the now-deprecated commands last updated in [this commit](https://github.com/tigard-tools/tigard/commit/5e5722944c8c1ec73b0fa85d574793300c23b3ce). [Future versions will deprecate some of these commands](https://github.com/tigard-tools/tigard/pull/86).
 
 The appropriate configuration file (make this a link to the file) should look like:
 
@@ -241,6 +241,15 @@ To use it with openocd:
 
 ```bash
 openocd -f tigard-jtag.cfg
+```
+
+[Black Magic Debug](https://codeberg.org/blackmagic-debug/blackmagic) is an alternative for OpenOCD that supports automatic identification and configuration of a huge number of devices. The Black Magic Debug App can do this through Tigard:
+
+```
+blackmagic -l # list probes, you should see Tigard listed
+blackmagic -c tigard -t # list connected devices, you should see your target
+blackmagic -c tigard # start the server, it will tell you a port to connect GDB to
+gdb-multiarch --eval-command="tar ext :2000" --eval-command="att 1" # to start gdb and connect
 ```
 
 ## JTAG Boundary Scan (on JTAG or CORTEX header)
